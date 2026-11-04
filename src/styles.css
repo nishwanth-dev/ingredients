@@ -29,14 +29,14 @@
 .ing-letters::-webkit-scrollbar { display: none; }
 .ing-tab { position: relative; flex: 1 0 auto; min-width: 28px; padding: 18px 6px; border: 0; background: none; font-size: 14px; font-weight: 400; color: var(--letter-color); cursor: pointer; }
 .ing-tab[disabled] { opacity: 0.3; cursor: default; }
-.ing-tab.is-active { color: var(--accent); font-weight: 600; }
+.ing-tab.is-active { color: var(--text); font-weight: 600; }
 .ing-tab.is-active::before { content: ''; position: absolute; left: 50%; top: 6px; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: var(--accent); }
 
 .ing-wrap { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
 .ing-letter { display: flex; align-items: center; gap: 16px; margin: 48px 0 28px; scroll-margin-top: calc(var(--sticky-offset) + 70px); }
 .ing-letter i { flex: 1; height: 1px; background: var(--line-color); }
 .ing-letter i:first-child { flex: 0 0 24px; }
-.ing-letter span { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--accent); border-radius: 50%; font-size: 18px; font-weight: 400; color: var(--accent); }
+.ing-letter span { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--accent); border-radius: 50%; font-size: 18px; font-weight: 400; color: var(--text); }
 .ing-grid { display: grid; grid-template-columns: repeat(var(--columns-mobile), minmax(0, 1fr)); gap: 40px 10px; }
 
 .ing-card { cursor: pointer; padding: 14px 14px 18px; border-radius: var(--card-radius); background: var(--card-bg); transition: background-color .45s ease; }
@@ -84,7 +84,7 @@
 .ing-prod-t b { font-size: 18px; font-weight: 700; line-height: 1.2; color: var(--name-color); }
 .ing-prod-t i { font-style: normal; font-size: 14px; font-weight: 400; line-height: 1.35; color: var(--text); }
 .ing-prod svg { flex: 0 0 auto; color: var(--name-color); }
-.ing-x { position: absolute; top: 14px; right: 14px; z-index: 2; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.25); font-size: 24px; line-height: 1; color: #2b2b36; cursor: pointer; }
+.ing-x { position: absolute; top: 14px; right: 14px; z-index: 2; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.25); font-size: 24px; line-height: 1; color: var(--text); cursor: pointer; }
 
 /* certifications */
 .ing-cert { max-width: 1100px; margin: 0 auto; padding: 28px 20px 0; }
@@ -131,3 +131,6 @@ a.ing-badge:hover { background: var(--hover-card-bg); }
 /* long names (for example "Acrylates/C10-30 Alkyl Acrylate Crosspolymer") must wrap inside the card, not push the + button out */
 .ing-info > div:first-child { min-width: 0; flex: 1 1 auto; }
 .ing-name, .ing-line, .ing-pname { overflow-wrap: anywhere; }
+
+.ing-sbox input::placeholder { color: var(--text); opacity: 1; }
+.ing-pline { margin: -6px 0 14px; font-size: 14px; line-height: 1.4; color: var(--text); overflow-wrap: anywhere; }

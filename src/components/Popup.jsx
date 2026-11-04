@@ -51,6 +51,7 @@ export default function Popup({ item, onClose }) {
         {item && (
           <div className="ing-pbody">
             <h3 className="ing-pname">{item.name}</h3>
+            {item.line && <p className="ing-pline">{item.line}</p>}
             <div className="ing-ptags">{item.tags?.map((t) => <span key={t}>{t}</span>)}</div>
             <div>
               {item.about && <div className="ing-sec ing-sec-intro"><p>{item.about}</p></div>}
