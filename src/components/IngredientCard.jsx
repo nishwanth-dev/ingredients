@@ -1,11 +1,18 @@
 import { PlusIcon } from './Icons.jsx';
-import { labels } from '../content.js';
+import { labels, photo } from '../content.js';
 
 export default function IngredientCard({ item, isOn, onTap }) {
   return (
     <div className={'ing-card' + (isOn ? ' is-on' : '')} data-card onClick={(e) => onTap(item, e)}>
       <div className="ing-img">
-        {item.image && <img src={item.image + (item.image.includes('?') ? '&' : '?') + 'width=800'} alt={item.name} loading="lazy" />}
+        {item.image && (
+          <img
+            src={photo(item.image, 400)}
+            srcSet={photo(item.image, 400) + ' 400w, ' + photo(item.image, 800) + ' 800w'}
+            sizes="(min-width: 990px) 33vw, 92vw"
+            alt={item.name} loading="lazy" decoding="async"
+          />
+        )}
         {item.hover && (
           <div className="ing-hover" aria-hidden="true">
             <div><p>{item.hover}</p></div>

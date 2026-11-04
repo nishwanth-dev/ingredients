@@ -23,9 +23,11 @@ export const labels = {
 
 const cdn = (file) => `${SHOP_URL}/cdn/shop/files/${file}`;
 
-// Photos are in Shopify Files, named ing-<name>.jpg.
-const IMG = 'https://cdn.shopify.com/s/files/1/0619/9990/7032/files/';
-const img = (slug) => IMG + 'ing-' + slug + '.jpg';
+// Photos are hosted by Loopy: ing-<name>-400.jpg and ing-<name>-800.jpg (two sizes of each).
+// `image` holds the address without the size and extension; photo() adds them.
+export const PHOTO_BASE = 'https://tuco-video-api.tucokids.workers.dev/media/ingredients/';
+const img = (slug) => PHOTO_BASE + 'ing-' + slug;
+export const photo = (base, width) => base + '-' + width + '.jpg';
 
 // "what" and "why" are the bullet points in the popup: one bullet per line (\n between lines).
 // The cards are sorted A-Z on the page, so the order here does not matter.

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { SearchIcon } from './Icons.jsx';
-import { labels } from '../content.js';
+import { labels, photo } from '../content.js';
 
 export default function Search({ items, onPick }) {
   const [q, setQ] = useState('');
@@ -49,7 +49,7 @@ export default function Search({ items, onPick }) {
       <ul className={'ing-sdrop' + (show ? ' is-open' : '')} role="listbox" onMouseDown={(e) => e.preventDefault()}>
         {hits.map((c, i) => (
           <li key={c.name} role="option" className={'ing-sopt' + (i === act ? ' is-act' : '')} onClick={() => pick(c)}>
-            {c.image ? <img src={c.image + (c.image.includes('?') ? '&' : '?') + 'width=120'} alt="" /> : <span className="ing-sph" />}
+            {c.image ? <img src={photo(c.image, 400)} alt="" width="44" height="44" /> : <span className="ing-sph" />}
             <div><b>{c.name}</b>{c.tags.length > 0 && <small>{c.tags.join(' · ')}</small>}</div>
           </li>
         ))}

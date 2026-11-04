@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronRight } from './Icons.jsx';
-import { labels, SHOP_URL } from '../content.js';
+import { labels, SHOP_URL, photo } from '../content.js';
 import { themeVars } from '../theme.js';
 
 const lines = (t) => (t || '').split(/\r?\n/).map((x) => x.trim()).filter(Boolean);
@@ -47,7 +47,7 @@ export default function Popup({ item, onClose }) {
       style={themeVars} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="ing-box" ref={box}>
         <button type="button" className="ing-x" aria-label="Close" onClick={onClose}>&times;</button>
-        {item?.image && <img className="ing-pimg" src={sized(item.image, 800)} alt={item.name} onLoad={fit} />}
+        {item?.image && <img className="ing-pimg" src={photo(item.image, 800)} alt={item.name} onLoad={fit} />}
         {item && (
           <div className="ing-pbody">
             <h3 className="ing-pname">{item.name}</h3>
