@@ -8,6 +8,10 @@ Tuco Kids ingredient dictionary as a standalone React app (Vite). It is a port o
 - Hover panel on desktop (tap once on touch screens), popup with image, tags, text, bullets and the products it is found in
 - Certifications tab: four highlight boxes, repository heading, filter chips, certificate rows
 
+## Header, footer and links
+
+The page also has the live site's announcement bar, header, menu drawer, phone tab bar and footer (`src/layout/`). Every link in them, and every product link in the ingredient popup, opens the real page on `https://tucokids.com` (relative store paths are turned into full addresses in `src/layout/data.js`). The header search goes to the store's own search page.
+
 ## Run
 
 ```bash

@@ -1,0 +1,424 @@
+
+  /* =====================================================================
+     Tuco redesigned footer. Entirely new class names (tuco-footer__*) so
+     none of the legacy footer rules in assets/beintelligent-style.css /
+     beintelligent-style-two.css (which target .footer-above-wrapp /
+     .footer-bottom-wrapp) leak onto this markup.
+  ====================================================================== */
+  .tuco-footer-bg {
+    position: relative;
+    /* Sampled directly from the actual artwork's own bottom edge (both the
+       desktop and mobile files end in this same solid, uniform tone), so
+       when real content is taller than the image, the extra space below
+       continues in the exact same color the illustration already fades to —
+       no visible seam, and (unlike stretching to 100% 100%) no distortion
+       of the artwork's proportions either. */
+    background-color: #e9ec90;
+    /* NOTE: current artwork (footerdesktop.png / footermobile.png) is fully
+       opaque white at the top, not transparent — the background-color above
+       only shows if the image fails to load or doesn't fully cover the
+       element's height. IMPORTANT: Shopify CDN URLs are versioned via the
+       "?v=" query string. If you replace either file in Admin > Content >
+       Files, you MUST copy the new URL (with its new ?v= value) from Files
+       and paste it in below — reusing this old URL string will keep serving
+       a stale cached copy of the old artwork indefinitely. */
+    background-image: url('https://cdn.shopify.com/s/files/1/0619/9990/7032/files/footerdesktop.webp?v=1784723816');
+    /* Scale by width only, preserving the image's real aspect ratio
+       (undistorted). Any excess height below the image is covered by the
+       matching background-color above. */
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    /* Padding places the logo/card on the artwork's own cream cloud area
+       rather than right at its top edge. */
+    padding: 220px 0 40px;
+    font-family: 'Poppins', var(--font-body-family), sans-serif;
+    color: #2b2b2b;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 749px) {
+    .tuco-footer-bg {
+      background-color: #e9ec90;
+      background-image: url('https://cdn.shopify.com/s/files/1/0619/9990/7032/files/footermobile.webp?v=1784723845');
+      padding: 130px 0 24px;
+    }
+  }
+
+  /* Mobile: everything is one column, so the visual stacking order is
+     simply DOM order (logo+categories, newsletter card, quick links,
+     contact us, social icons — in that literal source order below).
+     Desktop: the SAME elements get explicitly relocated into a 3-column,
+     2-row grid via grid-column/grid-row (independent of DOM order), so
+     "quick links" (col 1, row 2) and "contact us" (col 3, row 2) land on
+     the same row and line up, while the newsletter card (col 2, row 1)
+     and social icons (col 2, row 2) form their own independent column.
+     Column 3's row 1 is left empty on purpose — that's where the mascot
+     sits in the background artwork. */
+  .tuco-footer__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  @media screen and (min-width: 990px) {
+    .tuco-footer__inner {
+      grid-template-columns: 0.85fr 1fr 1.05fr;
+      grid-template-rows: auto auto;
+      align-items: start;
+      column-gap: 40px;
+      row-gap: 24px;
+    }
+    .tuco-footer__block--categories { grid-column: 1; grid-row: 1; }
+    .tuco-footer__block--quicklinks { grid-column: 1; grid-row: 2; }
+    .tuco-footer__block--newsletter-card { grid-column: 2; grid-row: 1; }
+    .tuco-footer__block--social { grid-column: 2; grid-row: 2; }
+    .tuco-footer__block--contact { grid-column: 3; grid-row: 2; }
+
+    /* Bigger logo on desktop only — mobile keeps the 130px Liquid default. */
+    .tuco-footer__logo img {
+      width: 190px !important;
+      height: auto !important;
+    }
+  }
+
+  .tuco-footer__logo {
+    display: inline-block;
+    margin-bottom: 28px;
+  }
+  .tuco-footer__logo img { display: block; height: auto; }
+
+  .tuco-footer__heading {
+    font-family: 'More Sugar', 'Poppins', cursive;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #2b2b2b;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tuco-footer__heading svg { width: 16px; height: 16px; flex-shrink: 0; color: #4D4749; }
+
+  @media screen and (min-width: 750px) {
+    .tuco-footer__heading { font-size: 2.5rem; }
+  }
+
+  .tuco-footer__list {
+    list-style: none;
+    margin: 0 0 28px;
+    padding: 0;
+  }
+  .tuco-footer__list li { margin: 0; }
+  .tuco-footer__list a {
+    display: block;
+    padding: 5px 0;
+    font-size: 1.4rem;
+    color: #3b3b3b;
+    text-decoration: none;
+  }
+  .tuco-footer__list a:hover { color: #000; text-decoration: underline; }
+
+  @media screen and (min-width: 750px) {
+    .tuco-footer__list a { font-size: 1.8rem; }
+  }
+
+  /* ---- newsletter card ---- */
+  .tuco-footer__newsletter-card {
+    background: rgba(225, 230, 107, 0.79);
+    border-radius: 24px;
+    padding: 28px 30px;
+    text-align: center;
+    max-width: 460px;
+    margin: 0 auto 28px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .tuco-footer__newsletter-card {
+      background: rgba(232, 235, 136, 0.79);
+    }
+  }
+
+  /* Figma desktop spec: 462x186, radius 32. Only kicks in at the 990px
+     breakpoint where the newsletter card gets its own dedicated grid
+     column (below that, on tablet, it shares a row with the categories
+     column and needs to stay flexible-width instead). */
+  @media screen and (min-width: 990px) {
+    .tuco-footer__newsletter-card {
+      width: 462px;
+      height: 186px;
+      max-width: 462px;
+      border-radius: 32px;
+      opacity: 1;
+      padding: 20px 32px;
+      margin: 0 auto;
+    }
+  }
+
+  .tuco-footer__newsletter-card .tuco-footer__heading {
+    justify-content: center;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+  .tuco-footer__newsletter-copy {
+    font-size: 1.4rem;
+    color: #4d4d3a;
+    line-height: 1.45;
+    margin: 0 0 14px;
+  }
+  .tuco-footer__newsletter-row {
+    display: flex;
+    gap: 12px;
+  }
+  .tuco-footer__newsletter-row .field__input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 999px;
+    padding: 13px 20px;
+    font-size: 1.4rem;
+    font-family: inherit;
+    background: #ffffff;
+    color: #2b2b2b;
+  }
+
+  /* ---------------------------------------------------------------------
+     Placeholder text fix: Dawn-based themes ship a global rule (usually
+     in component-input.css / component-newsletter.css, loaded above)
+     that hides ::placeholder on .field__input — e.g.
+     ".field__input::placeholder { opacity: 0; }" — because their
+     standard markup pairs the input with a `.field__label` that floats
+     into the placeholder's position instead. This footer's markup
+     doesn't use that floating-label pattern, so the global rule was
+     silently zeroing out our real placeholder text. Restating the rule
+     here, scoped to this input and with !important, wins the cascade
+     regardless of the load order of the component stylesheets above.
+  --------------------------------------------------------------------- */
+  .tuco-footer__newsletter-row .field__input::placeholder {
+    opacity: 1 !important;
+    color: #6f6f57 !important;
+    font-family: 'Poppins', var(--font-body-family), sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    line-height: 163% !important;
+    letter-spacing: 0.02em !important;
+    text-align: center !important;
+  }
+  /* Safari/WebKit and Firefox need their own prefixed selectors to pick up
+     the same declarations — a bare ::placeholder alone won't reliably
+     override vendor-prefixed rules already set by the theme's own CSS. */
+  .tuco-footer__newsletter-row .field__input::-webkit-input-placeholder {
+    opacity: 1 !important;
+    color: #6f6f57 !important;
+    font-family: 'Poppins', var(--font-body-family), sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    line-height: 163% !important;
+    letter-spacing: 0.02em !important;
+    text-align: center !important;
+  }
+  .tuco-footer__newsletter-row .field__input::-moz-placeholder {
+    opacity: 1 !important;
+    color: #6f6f57 !important;
+    font-family: 'Poppins', var(--font-body-family), sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    line-height: 163% !important;
+    letter-spacing: 0.02em !important;
+    text-align: center !important;
+  }
+
+  .tuco-footer__newsletter-row .field__input::placeholder { color: #9a9a8a; }
+
+  /* Figma desktop spec for the placeholder: 15px/500/163%/2% — the base
+     rules above stay at 12px for the compact mobile card; this bumps just
+     the font-size back up at the same 990px breakpoint where the card
+     itself switches to its fixed Figma dimensions. */
+  @media screen and (min-width: 990px) {
+    .tuco-footer__newsletter-row .field__input::placeholder,
+    .tuco-footer__newsletter-row .field__input::-webkit-input-placeholder,
+    .tuco-footer__newsletter-row .field__input::-moz-placeholder {
+      font-size: 18px !important;
+    }
+    .tuco-footer__newsletter-row .field__input {
+      font-size: 18px;
+    }
+  }
+
+  .tuco-footer__newsletter-row button {
+    flex-shrink: 0;
+    border: none;
+    border-radius: 999px;
+    padding: 13px 26px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: inherit;
+    background: #5b5b3c;
+    color: #ffffff;
+    cursor: pointer;
+    text-transform: lowercase;
+  }
+  .tuco-footer__newsletter-row button:hover { background: #47472e; }
+  .tuco-footer__newsletter-message { font-size: 1.3rem; margin-top: 10px; }
+
+  /* ---- social + marketplace icon grid ---- */
+  .tuco-footer__social-grid {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 420px;
+  }
+  .tuco-footer__social-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    border: 2px solid #2b2b2b;
+    background: #fffef8;
+    color: #2b2b2b;
+  }
+  .tuco-footer__social-grid svg { width: 22px; height: 22px; color: #4D4749; }
+  .tuco-footer__social-grid img { width: 30px; height: 30px; object-fit: contain; }
+  .tuco-footer__social-grid .tuco-footer__in-badge {
+    font-family: 'Poppins', var(--font-body-family), sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #4D4749;
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+  }
+
+  /* ---- contact column ---- */
+  .tuco-footer__block--contact { position: relative; }
+
+  .tuco-footer__contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 1.4rem;
+    color: #3b3b3b;
+    line-height: 1.4;
+  }
+  .tuco-footer__contact-row svg { width: 18px; height: 18px; margin-top: 3px; flex-shrink: 0; color: #4D4749; }
+  .tuco-footer__contact-row a { color: inherit; text-decoration: none; }
+  .tuco-footer__contact-row a:hover { text-decoration: underline; }
+
+  @media screen and (min-width: 750px) {
+    .tuco-footer__contact-row { font-size: 1.8rem; }
+  }
+
+  /* Mobile + tablet: categories + the newsletter card sit side by side in a
+     small top row (card kept small on purpose), everything else stacks
+     full-width below. Keeping the card out of the vertical stack (rather
+     than sandwiched between categories and quick links) is what lets
+     quick links land right where the mascot already sits in
+     footermobile.png — the mascot's position is baked into that image and
+     doesn't move with content, so the less height that piles up above it,
+     the more reliably it lines up. This block is deliberately last in the
+     stylesheet so it wins the cascade over the base/desktop rules above
+     for the same properties.
+     IMPORTANT: this must end exactly at 989px, right where the
+     min-width:990px desktop grid below picks up — any gap between the two
+     breakpoints falls back to the single-column base rule with the
+     full-size card, which is tall enough to run past the end of the
+     background artwork and expose the raw #e9ec90 fallback color instead
+     of the cream cloud background (reads as a stray green patch). */
+  @media screen and (max-width: 989px) {
+    .tuco-footer__inner {
+      /* minmax(0, ...) forces the fr ratio to actually hold — a bare "0.8fr"
+         track still has an implicit min size equal to its content's
+         min-content width, so the categories column (whose text doesn't
+         wrap) was quietly overriding the ratio and eating space back from
+         the card column. minmax(0, ...) removes that implicit floor. */
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      column-gap: 6px;
+      row-gap: 20px;
+    }
+    .tuco-footer__block--categories { grid-column: 1; grid-row: 1; }
+    .tuco-footer__block--newsletter-card { grid-column: 2; grid-row: 1; align-self: start; margin-top: 40px; }
+    .tuco-footer__block--quicklinks { grid-column: 1 / -1; grid-row: 2; }
+    .tuco-footer__block--contact { grid-column: 1 / -1; grid-row: 3; }
+    .tuco-footer__block--social { grid-column: 1 / -1; grid-row: 4; }
+
+    .tuco-footer__newsletter-card {
+      padding: 10px 12px;
+      max-width: 100%;
+      margin: 0;
+      border-radius: 16px;
+    }
+    .tuco-footer__newsletter-card .tuco-footer__heading {
+      font-size: 1.25rem;
+      margin-bottom: 2px;
+    }
+    .tuco-footer__newsletter-copy {
+      font-size: 0.9rem;
+      line-height: 1.15;
+      margin: 0 0 8px;
+    }
+    .tuco-footer__newsletter-row {
+      flex-direction: column;
+      gap: 6px;
+    }
+    .tuco-footer__newsletter-row .field__input {
+      padding: 7px 12px;
+      font-size: 1rem;
+    }
+    .tuco-footer__newsletter-row button {
+      padding: 7px 12px;
+      font-size: 1rem;
+    }
+  }
+
+  /* Phone only (this overrides the shared 989px block above for the
+     properties it touches, since it's declared later): the card becomes a
+     small, roughly-square panel per the Figma spec (190x203). It still
+     lives in the col2/row1 grid track next to categories (not absolutely
+     positioned) — row1's height is governed by the much taller categories
+     column, so pushing the card down within that row with margin-top can't
+     collide with quick links below; an absolutely-positioned card, by
+     contrast, would float outside document flow and overlap whatever
+     happened to be at that scroll position, which is what made it clash
+     with "quick links" in an earlier version of this. */
+  @media screen and (max-width: 749px) {
+    .tuco-footer__block--newsletter-card {
+      margin-top: 110px;
+    }
+    .tuco-footer__newsletter-card {
+      width: 100%;
+      max-width: none;
+      padding: 16px 18px 18px;
+      border-radius: 16px;
+    }
+    .tuco-footer__newsletter-card .tuco-footer__heading {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+    .tuco-footer__newsletter-copy {
+      font-size: 0.85rem;
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+    .tuco-footer__newsletter-row {
+      flex-direction: column;
+      gap: 6px;
+    }
+    .tuco-footer__newsletter-row .field__input {
+      padding: 7px 10px;
+      font-size: 0.9rem;
+    }
+    .tuco-footer__newsletter-row button {
+      padding: 7px 10px;
+      font-size: 0.9rem;
+    }
+  }

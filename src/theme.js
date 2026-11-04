@@ -41,7 +41,7 @@ export const theme = {
   columnsDesktop: 3,
   paddingTop: '48px',
   paddingBottom: '48px',
-  stickyOffset: '0px',
+  stickyOffset: '56px',
   tabHeight: '40px',
   tabFontSize: '14px',
 };

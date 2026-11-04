@@ -1,0 +1,352 @@
+
+  #menu-drawer.menu-drawer { background-color: #ffffff; }
+
+  /* The drawer itself never scrolls as one block — that let the footer
+     (wave/mascot/social icons) get pushed below the fold on shorter desktop
+     viewports with no visible scroll affordance, so it silently disappeared.
+     Instead: pills and footer are fixed in place, and only the middle nav
+     region (.tuco-drawer__nav) scrolls internally when its content is tall.
+     This guarantees the footer is always visible regardless of viewport height. */
+  .tuco-drawer {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', var(--font-body-family), sans-serif;
+    color: #3b3b3b;
+  }
+
+  @media screen and (max-width: 749px) {
+    .tuco-drawer { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
+  }
+
+  /* ---------- Top pills ---------- */
+  .tuco-drawer__pills {
+    display: flex;
+    flex-shrink: 0;
+    gap: 16px;
+    padding: 10px 22px 8px;
+  }
+  .tuco-pill {
+    flex: 1;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: #fce9a3;
+    color: #3b3b3b;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+    font-family: 'Poppins', var(--font-body-family), sans-serif;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+  }
+  .tuco-pill:hover { background: #f8df84; transform: translateY(-1px); }
+
+  /* ---------- Navigation (scrolls internally; pills above and footer below stay fixed) ---------- */
+  .tuco-drawer__nav {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 22px 4px;
+  }
+
+  .tuco-acc { border: none; }
+
+  .tuco-acc__head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 4px 0;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'More Sugar', 'Poppins', cursive;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #3b3b3b;
+  }
+  .tuco-acc__chev {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+  .tuco-acc.is-open .tuco-acc__chev { transform: rotate(180deg); }
+
+  /* Accordion open/close animates via grid-template-rows (0fr -> 1fr)
+     instead of a fixed max-height. A fixed max-height (e.g. 640px) has to
+     be larger than the tallest possible panel, but our panels are only
+     ~90-150px of actual content — so the box reached its real height
+     almost instantly while the transition kept numerically climbing toward
+     640 for the rest of its duration, looking like an abrupt snap instead
+     of a smooth open. grid-template-rows animates to the CONTENT's actual
+     height every time, regardless of how long the list is. */
+  .tuco-acc__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+  }
+  .tuco-acc__panel > .tuco-acc__list {
+    overflow: hidden;
+    min-height: 0;
+  }
+  .tuco-acc.is-open .tuco-acc__panel { grid-template-rows: 1fr; }
+
+  .tuco-acc__list {
+    list-style: none;
+    margin: 0;
+    padding: 1px 0 3px;
+  }
+  .tuco-acc__list li { margin: 0; }
+  .tuco-acc__list a {
+    display: block;
+    padding: 3px 2px;
+    font-family: 'Poppins', var(--font-body-family), sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4d4747;
+    text-decoration: none;
+  }
+  .tuco-acc__list a:hover { color: #000; }
+
+  /* standalone top-level links (no children) */
+  .tuco-link {
+    display: block;
+    padding: 4px 0;
+    font-family: 'More Sugar', 'Poppins', cursive;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #3b3b3b;
+    text-decoration: none;
+  }
+  .tuco-link:hover { color: #000; }
+
+  /* ---------- "blogs" row that slides to a submenu (Plum-style) ----------
+     A plain row (not an accordion) with a chevron pointing right. Clicking it
+     slides the whole nav sideways to reveal a second panel listing every blog
+     category as a direct link — no intermediate "hub" page with its own
+     "Read!" buttons to click through first. */
+  .tuco-slide-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 4px 0;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'More Sugar', 'Poppins', cursive;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #3b3b3b;
+  }
+  .tuco-slide-row .tuco-acc__chev { width: 14px; height: 14px; transform: rotate(-90deg); }
+  .tuco-slide-row:hover { color: #000; }
+
+  /* Viewport that clips the two side-by-side panels */
+  .tuco-drawer__slideport {
+    overflow: hidden;
+  }
+  .tuco-drawer__slidetrack {
+    display: flex;
+    width: 200%;
+    transition: transform 0.3s ease;
+  }
+  .tuco-drawer__slidetrack.is-shifted { transform: translateX(-50%); }
+  .tuco-drawer__slidepanel {
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  .tuco-drawer__subhead {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0 10px;
+  }
+  .tuco-drawer__subback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #3b3b3b;
+  }
+  .tuco-drawer__subback svg { width: 20px; height: 20px; }
+  .tuco-drawer__subtitle {
+    font-family: 'More Sugar', 'Poppins', cursive;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #3b3b3b;
+  }
+  .tuco-sublist {
+    list-style: none;
+    margin: 0;
+    padding: 1px 0 3px;
+  }
+  .tuco-sublist li { margin: 0; }
+  .tuco-sublist a {
+    display: block;
+    padding: 3px 2px;
+    font-family: 'Poppins', var(--font-body-family), sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4d4747;
+    text-decoration: none;
+  }
+  .tuco-sublist a:hover { color: #000; }
+
+  @media screen and (max-width: 749px) {
+    .tuco-slide-row { font-size: 24.5px !important; }
+    .tuco-sublist { padding: 0 0 1px !important; }
+    .tuco-sublist a { padding: 5px 2px !important; font-size: 18.5px !important; line-height: 1.2 !important; min-height: 0 !important; }
+    .tuco-drawer__subtitle { font-size: 24.5px !important; }
+  }
+
+  @media screen and (max-width: 380px) {
+    .tuco-slide-row, .tuco-drawer__subtitle { font-size: 22px !important; }
+    .tuco-sublist a { font-size: 17px !important; }
+  }
+
+  /* ---------- Footer: wave + boat + social (always visible, never scrolls away) ----------
+     These are the ORIGINAL desktop values — unchanged. Mobile gets a shorter,
+     repositioned version via the max-width: 749px override below (same
+     breakpoint already used above for .tuco-drawer's safe-area padding). */
+  .tuco-drawer__footer {
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 14px;
+  }
+  .tuco-wave-top {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: -1px;
+  }
+  .tuco-wave-body {
+    position: relative;
+    background: #b4e7fb;
+    min-height: 96px;
+    padding: 0 0 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .tuco-boat {
+    position: absolute;
+    right: 48px;
+    top: -38px;
+    width: 92px;
+    height: auto;
+    pointer-events: none;
+  }
+  .tuco-social {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 40px 8px 0;
+    padding: 0;
+  }
+  .tuco-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 2px solid #3b3b3b;
+    color: #3b3b3b;
+    line-height: 0;
+    background: transparent;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  .tuco-social svg { width: 20px; height: 20px; }
+  .tuco-social .tuco-social__text {
+    font-family: 'Poppins', var(--font-body-family), sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .tuco-social a:hover { opacity: 0.75; }
+
+  /* ---------- Mobile/tablet-only footer overrides (viewport <= 749px) ----------
+     Kept deliberately SHORT: this footer sits below .tuco-drawer__nav inside a
+     fixed-height flex column (see .tuco-drawer), so every pixel it takes is a
+     pixel the nav loses — on real phones (shorter usable viewport than desktop
+     devtools, thanks to the browser chrome, the top sticky-notification bar,
+     and the store's own bottom tab bar) an oversized footer was pushing the
+     last nav link ("awards") out of view. Desktop is untouched above. */
+  @media screen and (max-width: 749px) {
+    /* Tighter row spacing so the nav list reads more compact — desktop keeps
+       its original, more generous padding untouched (set further up).
+       Two separate causes were stacking on top of each other here:
+       1) the theme's global `body { line-height: calc(1 + .8 / var(--font-body-scale)) }`
+          (~1.8x) was cascading into .tuco-acc__list a, which never set its own
+          line-height — fixed by the line-height/padding overrides below.
+       2) a THIRD-PARTY APP STYLESHEET ("beintelligent-style.css", loaded
+          separately from this theme) applies a generic mobile touch-target
+          rule — `nav a { min-height: 44px; min-width: 44px; ... }` inside its
+          own max-width:749px query — to every link inside any <nav>, which
+          includes this drawer's <nav class="tuco-drawer__nav">. Since that
+          rule never faced a competing `min-height` declaration from us, it
+          won by default regardless of how tight the padding/line-height were
+          set, pinning every row to 44px. Explicitly overriding min-height
+          here (verified against the live site's computed styles) is what
+          actually fixes the visible row height. */
+    /* Bumped ~2-2.5px over the base desktop sizes so rows read as bigger,
+       easier-to-tap targets on mobile. */
+    .tuco-acc__head { padding: 4px 0 !important; font-size: 24.5px !important; }
+    .tuco-acc__list { padding: 0 0 1px !important; }
+    .tuco-acc__list a { padding: 5px 2px !important; font-size: 18.5px !important; line-height: 1.2 !important; min-height: 0 !important; }
+    /* Match the same tight rhythm as the category list above, so
+       "parents' circle" and "awards" don't read as more loosely
+       spaced than the rest of the nav. */
+    .tuco-link { padding: 4px 0 !important; font-size: 24.5px !important; min-height: 0 !important; }
+
+    .tuco-drawer__footer { margin-top: 6px; }
+    .tuco-wave-top { height: 32px; }
+    .tuco-wave-body { min-height: 64px; padding: 0 0 8px; }
+    /* Positioned away from the bottom-right corner on purpose: a third-party
+       chat bubble (SagePilot, loaded globally in layout/theme.liquid) always
+       floats fixed in that corner on every page, including over this drawer,
+       and previously sat right on top of the boat. */
+    .tuco-boat { right: 86px; top: -66px; width: 114px; }
+    .tuco-social { gap: 14px; margin: 0 26px 0 0; }
+    .tuco-social a { width: 32px; height: 32px; border-radius: 10px; }
+    .tuco-social svg { width: 16px; height: 16px; }
+    .tuco-social .tuco-social__text { font-size: 13px; }
+  }
+
+  @media screen and (max-width: 380px) {
+    .tuco-acc__head, .tuco-link { font-size: 22px !important; }
+    .tuco-acc__list a { font-size: 17px !important; }
+    .tuco-boat { width: 88px; top: -42px; right: 68px; }
+    .tuco-social { margin-right: 18px; }
+  }
+
+  /* Hide the hero banner's floating mute/unmute button while the drawer is open —
+     it's position:absolute inside its own container with z-index:20, so it
+     otherwise floats over the drawer content. */
+  body:has(#Details-menu-drawer-container[open]) .wht-mute-btn {
+    display: none !important;
+  }

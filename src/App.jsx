@@ -5,6 +5,10 @@ import IngredientCard from './components/IngredientCard.jsx';
 import Search from './components/Search.jsx';
 import Popup from './components/Popup.jsx';
 import Certifications from './components/Certifications.jsx';
+import AnnouncementBar from './layout/AnnouncementBar.jsx';
+import Header from './layout/Header.jsx';
+import Footer from './layout/Footer.jsx';
+import BottomNav from './layout/BottomNav.jsx';
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const letterOf = (n) => { const l = (n || '#').charAt(0).toUpperCase(); return /[A-Z]/.test(l) ? l : '#'; };
@@ -66,6 +70,8 @@ export default function App() {
 
   return (
     <div className="ing-app" style={themeVars}>
+      <AnnouncementBar />
+      <Header />
       <section className="ing">
         <div className="ing-head">
           <p className="ing-sub">{labels.subheading}</p>
@@ -101,6 +107,8 @@ export default function App() {
 
         <div className="ing-view" hidden={tab !== 'cert'}><Certifications /></div>
       </section>
+      <Footer />
+      <BottomNav />
       <Popup item={open} onClose={close} />
     </div>
   );
