@@ -127,3 +127,7 @@ a.ing-badge:hover { background: var(--hover-card-bg); }
   .ing-repo-head h3 { font-size: 34px; }
   .ing-cert { padding: 36px 40px 0; }
 }
+
+/* long names (for example "Acrylates/C10-30 Alkyl Acrylate Crosspolymer") must wrap inside the card, not push the + button out */
+.ing-info > div:first-child { min-width: 0; flex: 1 1 auto; }
+.ing-name, .ing-line, .ing-pname { overflow-wrap: anywhere; }
