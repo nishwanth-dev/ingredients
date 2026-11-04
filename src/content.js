@@ -642,7 +642,8 @@ export const ingredients = [
 ];
 
 // The banner at the top of the Certifications tab (file is hosted by Loopy next to the ingredient photos).
-export const BANNER = PHOTO_BASE + 'no-compromise-banner.webp';
+// Inside Shopify the section passes the theme's own copy (data-banner); this address is only the fallback.
+export const assets = { banner: PHOTO_BASE + 'no-compromise-banner.webp' };
 
 // The certificate categories, in the order they are shown. Give each certificate below a `category` with one of these ids.
 export const certificateCategories = [

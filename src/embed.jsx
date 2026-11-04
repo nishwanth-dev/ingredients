@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
-import { ingredients, certificates, badges, labels } from './content.js';
+import { ingredients, certificates, badges, labels, assets } from './content.js';
 import { setTheme } from './theme.js';
 import { config } from './config.js';
 import './styles.css';
@@ -26,6 +26,7 @@ function start() {
     } catch (e) { console.error('[ingredient-app] bad data', e); }
   }
   config.ajaxCart = mount.dataset.cart === 'ajax';
+  if (mount.dataset.banner) assets.banner = mount.dataset.banner;
   if (mount.dataset.stickyOffset) setTheme({ stickyOffset: mount.dataset.stickyOffset + 'px' });
 
   createRoot(mount).render(<App standalone={false} />);

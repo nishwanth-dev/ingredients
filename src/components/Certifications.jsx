@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, DownloadIcon } from './Icons.jsx';
-import { BANNER, certificateCategories, certificates } from '../content.js';
+import { assets, certificateCategories, certificates } from '../content.js';
 
 const sized = (src, w) => src + (src.includes('?') ? '&' : '?') + 'width=' + w;
 
@@ -10,7 +10,7 @@ export default function Certifications() {
 
   return (
     <div className="ing-cert">
-      <img className="ing-banner" src={BANNER} alt="No compromise: zero sulphates, parabens and harsh chemicals; EU approved ingredients; no hormone disruptors; IFRA phthalate-free fragrances" width="1245" height="1581" />
+      <img className="ing-banner" src={assets.banner} alt="No compromise: zero sulphates, parabens and harsh chemicals; EU approved ingredients; no hormone disruptors; IFRA phthalate-free fragrances" width="1245" height="1581" />
 
       <div className="ing-cats">
         {certificateCategories.map((cat) => {
