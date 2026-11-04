@@ -10,7 +10,7 @@ export default function Certifications() {
 
   return (
     <div className="ing-cert">
-      <img className="ing-banner" src={assets.banner} alt="No compromise: zero sulphates, parabens and harsh chemicals; EU approved ingredients; no hormone disruptors; IFRA phthalate-free fragrances" width="1245" height="1581" />
+      <img className="ing-banner" src={assets.banner} loading="lazy" decoding="async" alt="No compromise: zero sulphates, parabens and harsh chemicals; EU approved ingredients; no hormone disruptors; IFRA phthalate-free fragrances" width="1245" height="1581" />
 
       <div className="ing-cats">
         {certificateCategories.map((cat) => {
