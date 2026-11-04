@@ -45,6 +45,11 @@ export const ingredients = [
     name: "Shea Butter",
     image: img("shea-butter"),
     hover: "Loaded with fatty acids and vitamins A and E, shea butter melts into skin to provide deep nourishment, sealing in moisture for a soft, smooth and comfortable finish.",
+    products: [
+      { handle: 'natural-hair-conditioner-for-kids-100-g-3' },
+      { handle: 'bye-dull-skin-body-lotion-for-kids-200-ml' },
+      { handle: 'tints-pack-of-4' },
+    ],
     tags: ["Softening", "Moisturising"],
     line: "Butyrospermum Parkii Butter",
     what: "Melts into skin to provide deep nourishment\nSeals in moisture",
@@ -54,6 +59,11 @@ export const ingredients = [
     name: "Glycerin",
     image: img("glycerin"),
     hover: "A skin-loving humectant that draws moisture in, keeping lips and skin soft, supple and nourished.",
+    products: [
+      { handle: 'oat-body-lotion-for-kids' },
+      { handle: 'natural-hair-conditioner-for-kids-100-g-3' },
+      { handle: 'acne-face-gel-for-kids' },
+    ],
     tags: ["Hydrating", "Smoothening"],
     line: "Propane-1,2,3-triol",
     what: "A skin-loving humectant that draws moisture in",
@@ -72,6 +82,11 @@ export const ingredients = [
     name: "Turmeric",
     image: img("turmeric"),
     hover: "Powered by curcumin, turmeric calms redness and irritation, and defends skin against everyday environmental stressors for clear, healthy skin.",
+    products: [
+      { handle: 'bye-dull-skin-body-lotion-for-kids-200-ml' },
+      { handle: 'bye-dull-skin-face-wash-for-kids-100ml' },
+      { handle: 'very-dry-skin-cream-30g-1' },
+    ],
     tags: ["Anti-inflammatory", "Brightening", "Antioxidant"],
     line: "Curcuma Longa Root Extract",
     what: "Powered by curcumin, calms redness and irritation\nDefends skin against everyday environmental stressors",
@@ -81,6 +96,11 @@ export const ingredients = [
     name: "Saffron",
     image: img("saffron"),
     hover: "Saffron helps fade dullness and uneven tone while shielding skin from free radical damage, to fight tan and dullness.",
+    products: [
+      { handle: 'kumkumadi-facecream-for-kids-50g' },
+      { handle: 'kumkumadi-body-lotion-for-kids' },
+      { handle: 'kumkumadi-soap-for-kids' },
+    ],
     tags: ["Brightening", "Antioxidant", "Glow-Boosting"],
     line: "Crocus Sativus Flower Extract",
     what: "Helps fade dullness and uneven tone\nShields skin from free radical damage",
@@ -90,6 +110,9 @@ export const ingredients = [
     name: "Hibiscus",
     image: img("hibiscus"),
     hover: "A cherished Ayurvedic hair ritual, hibiscus boosts softness and shine and help reduce breakage for fuller, healthier-looking hair.",
+    products: [
+      { handle: 'reetha-shampoo-for-kids-300ml' },
+    ],
     tags: ["Strengthening", "Conditioning", "Shine-Boosting"],
     line: "Hibiscus Rosa-Sinensis Flower Extract",
     what: "A cherished Ayurvedic hair ritual\nBoosts softness and shine",
@@ -99,6 +122,11 @@ export const ingredients = [
     name: "Oat",
     image: img("oat"),
     hover: "Oat relieves itchy, sensitive skin and reinforces the moisture barrier, leaving it calm, comfortable and soft to the touch.",
+    products: [
+      { handle: 'oat-body-lotion-for-kids' },
+      { handle: 'tulsi-super-wash-for-kids-300ml' },
+      { handle: 'oat-face-cream-50g-2' },
+    ],
     tags: ["Soothing", "Barrier Repair"],
     line: "Avena Sativa Kernel Extract",
     what: "Relieves itchy, sensitive skin\nReinforces the moisture barrier",
@@ -108,6 +136,11 @@ export const ingredients = [
     name: "Aloe Vera",
     image: img("aloe-vera"),
     hover: "A time-honoured skin saviour, aloe provide weightless hydration and cools irritation and redness, helping stressed, sun-exposed skin recover.",
+    products: [
+      { handle: 'oat-body-lotion-for-kids' },
+      { handle: 'acne-face-gel-for-kids' },
+      { handle: 'oat-face-cream-50g-2' },
+    ],
     tags: ["Hydrating", "Soothing", "After-Sun Care"],
     line: "Aloe Barbadensis Leaf Juice",
     what: "Provides weightless hydration\nCools irritation and redness",
@@ -117,6 +150,10 @@ export const ingredients = [
     name: "Rice Water",
     image: img("rice-water"),
     hover: "A beauty ritual rooted in East Asian tradition, rice water is rich in amino acids, inositol and ferulic acid that soften and soothe skin.",
+    products: [
+      { handle: 'oat-body-lotion-for-kids' },
+      { handle: 'tulsi-super-wash-for-kids-300ml' },
+    ],
     tags: ["Brightening", "Smoothening"],
     line: "Oryza Sativa (Rice) Water",
     what: "Rich in amino acids, inositol and ferulic acid\nSoftens and soothes skin",
@@ -127,8 +164,9 @@ export const ingredients = [
     image: img("almond-oil"),
     hover: "Pressed from sweet almonds, this lightweight oil is packed with vitamin E and essential fatty acids that replenish moisture, smooth rough patches and leave it supple and hydrated.",
     products: [
-      { handle: 'kids-sunscreen-spf-50-50g-pack-of-3' },
-      { handle: '2-in-1-sunscreen-for-kids-spf-50' },
+      { handle: 'bye-dull-skin-body-lotion-for-kids-200-ml' },
+      { handle: 'reetha-shampoo-for-kids-300ml' },
+      { handle: 'tulsi-super-wash-for-kids-300ml' },
     ],
     tags: ["Nourishing", "Softening"],
     line: "Prunus Amygdalus Dulcis Oil",
@@ -139,6 +177,9 @@ export const ingredients = [
     name: "Mango Butter",
     image: img("mango-butter"),
     hover: "Rich in fatty acids and vitamins A, C and E, mango butter deeply nourishes, locks in moisture and strengthens the skin barrier, leaving it soft, smooth and supple without a greasy feel.",
+    products: [
+      { handle: 'bye-dull-skin-body-lotion-for-kids-200-ml' },
+    ],
     tags: ["Nourishing", "Barrier Support", "Softening"],
     line: "Mangifera Indica Seed Butter",
     what: "Deeply nourishes and locks in moisture\nStrengthens the skin barrier",
@@ -148,6 +189,9 @@ export const ingredients = [
     name: "Ginger",
     image: img("ginger"),
     hover: "Ginger root invigorates the scalp, helps keep flakes and buildup at bay and protects strands against breakage.",
+    products: [
+      { handle: 'flake-fighter-anti-dandruff-shampoo-100-ml-2' },
+    ],
     tags: ["Scalp Invigorating", "Strengthening", "Clarifying"],
     line: "Zingiber Officinale Root Extract",
     what: "Invigorates the scalp\nHelps keep flakes and buildup at bay",
@@ -166,6 +210,9 @@ export const ingredients = [
     name: "Brahmi",
     image: img("brahmi"),
     hover: "Brahmi is rich in antioxidants that soothe and nourish the scalp, strengthen hair at the root and help reduce breakage for thicker, healthier-looking lengths.",
+    products: [
+      { handle: 'reetha-shampoo-for-kids-300ml' },
+    ],
     tags: ["Root Strengthening", "Scalp Soothing", "Nourishing"],
     line: "Bacopa Monnieri Extract",
     what: "Soothes and nourishes the scalp\nStrengthens hair at the root",
@@ -184,6 +231,9 @@ export const ingredients = [
     name: "Sugar Maple",
     image: img("sugar-maple"),
     hover: "A natural source of fruit acids and antioxidants, sugar maple extract gently loosens dull surface cells to refine texture and even skin tone, while helping protect it from everyday environmental stress.",
+    products: [
+      { handle: 'bye-oily-skin-face-wash' },
+    ],
     tags: ["Gentle Exfoliation", "Brightening", "Smoothening"],
     line: "Acer Saccharum Extract",
     what: "A natural source of fruit acids and antioxidants\nGently loosens dull surface cells to refine texture and even skin tone",
@@ -211,6 +261,9 @@ export const ingredients = [
     name: "Acrylates Crosspolymer",
     image: img("acrylates-c10-30-alkyl-acrylate-crosspolymer"),
     hover: "A gelling agent that gives formulas their smooth, cushiony feel, this crosspolymer keeps oil and water evenly blended and stable so every application spreads easily and absorbs without residue.",
+    products: [
+      { handle: 'bye-dull-skin-body-lotion-for-kids-200-ml' },
+    ],
     tags: ["Texture-Enhancing", "Stabilising"],
     line: "Acrylates/C10-30 Alkyl Acrylate Crosspolymer",
     what: "A gelling agent that gives formulas their smooth, cushiony feel\nKeeps oil and water evenly blended and stable",
@@ -220,6 +273,10 @@ export const ingredients = [
     name: "Activated Charcoal",
     image: img("activated-charcoal"),
     hover: "With a porous structure that works like a magnet, activated charcoal draws out excess oil, dirt and impurities from pores, leaving skin/scalp feeling deeply cleansed, refreshed and visibly clearer.",
+    products: [
+      { handle: 'natural-hair-conditioner-for-kids-100-g-3' },
+      { handle: 'flake-fighter-anti-dandruff-shampoo-100-ml-2' },
+    ],
     tags: ["Purifying", "Deep Cleansing"],
     line: "Charcoal Powder",
     what: "Has a porous structure that works like a magnet\nDraws out excess oil, dirt and impurities from pores",
@@ -229,6 +286,11 @@ export const ingredients = [
     name: "Agnimantha",
     image: img("agnimantha"),
     hover: "A traditional Ayurvedic herb rich in antioxidants, agnimantha calms redness and irritation and helps protect skin from everyday stress, leaving it comfortable and balanced.",
+    products: [
+      { handle: 'kumkumadi-facecream-for-kids-50g' },
+      { handle: 'kumkumadi-body-lotion-for-kids' },
+      { handle: 'kumkumadi-soap-for-kids' },
+    ],
     tags: ["Soothing", "Anti-inflammatory", "Antioxidant"],
     line: "Premna Mucronata Extract",
     what: "A traditional Ayurvedic herb rich in antioxidants\nCalms redness and irritation",
@@ -238,6 +300,10 @@ export const ingredients = [
     name: "Allantoin",
     image: img("allantoin"),
     hover: "Calms and softens skin while supporting its natural renewal, helping rough, dry or irritated skin look smoother and feel more comfortable.",
+    products: [
+      { handle: 'oat-body-lotion-for-kids' },
+      { handle: 'oat-bathing-bar' },
+    ],
     tags: ["Soothing", "Skin Renewing"],
     line: "(2,5-Dioxoimidazolidin-4-yl)urea",
     what: "Calms and softens skin\nSupports its natural renewal",
@@ -247,6 +313,9 @@ export const ingredients = [
     name: "Marshmallow Root",
     image: img("marshmallow-root"),
     hover: "Rich in natural mucilage, marshmallow root forms a light moisturising layer that calms dry, sensitive skin and keeps it soft and hydrated.",
+    products: [
+      { handle: 'kids-daily-soap' },
+    ],
     tags: ["Soothing", "Hydrating"],
     line: "Althaea Officinalis Root Extract",
     what: "Rich in natural mucilage\nForms a light moisturising layer",
@@ -256,6 +325,9 @@ export const ingredients = [
     name: "Anhydroxylitol",
     image: img("anhydroxylitol"),
     hover: "A plant-derived sugar that helps skin hold on to water and strengthens its moisture barrier, keeping it hydrated for longer.",
+    products: [
+      { handle: 'bye-oily-skin-face-wash' },
+    ],
     tags: ["Hydrating", "Barrier Support"],
     line: "1,4-Anhydro-D-xylitol",
     what: "A plant-derived sugar\nHelps skin hold on to water\nStrengthens its moisture barrier",
@@ -265,6 +337,9 @@ export const ingredients = [
     name: "Neem",
     image: img("neem"),
     hover: "A classic Ayurvedic herb, neem helps purify skin, keep blemishes in check and calm redness for a clearer, calmer complexion.",
+    products: [
+      { handle: 'very-dry-skin-cream-30g-1' },
+    ],
     tags: ["Purifying", "Clarifying", "Soothing"],
     line: "Azadirachta Indica Leaf Extract",
     what: "A classic Ayurvedic herb\nHelps purify skin and keep blemishes in check",
@@ -274,6 +349,11 @@ export const ingredients = [
     name: "Bael",
     image: img("bael"),
     hover: "Rich in antioxidants and tannins, bael helps soothe and tone skin, protecting it from everyday stress and leaving it looking fresh and even.",
+    products: [
+      { handle: 'kumkumadi-facecream-for-kids-50g' },
+      { handle: 'kumkumadi-body-lotion-for-kids' },
+      { handle: 'kumkumadi-soap-for-kids' },
+    ],
     tags: ["Soothing", "Antioxidant"],
     line: "Aegle Marmelos Fruit Extract",
     what: "Rich in antioxidants and tannins\nHelps soothe and tone skin",
@@ -283,6 +363,10 @@ export const ingredients = [
     name: "Behenyl Alcohol",
     image: img("behenyl-alcohol"),
     hover: "A fatty alcohol that gives creams a rich, smooth texture. Unlike drying alcohols, it helps lock in moisture and leaves skin feeling soft.",
+    products: [
+      { handle: 'kumkumadi-facecream-for-kids-50g' },
+      { handle: 'oat-face-cream-50g-2' },
+    ],
     tags: ["Softening", "Texture-Enhancing"],
     line: "Docosan-1-ol",
     what: "A fatty alcohol that gives creams a rich, smooth texture",
@@ -301,6 +385,11 @@ export const ingredients = [
     name: "Brihati",
     image: img("brihati"),
     hover: "A traditional Ayurvedic herb, brihati is rich in antioxidants that help calm irritation and protect skin from everyday stress.",
+    products: [
+      { handle: 'kumkumadi-facecream-for-kids-50g' },
+      { handle: 'kumkumadi-body-lotion-for-kids' },
+      { handle: 'kumkumadi-soap-for-kids' },
+    ],
     tags: ["Soothing", "Antioxidant"],
     line: "Solanum Indicum Extract",
     what: "A traditional Ayurvedic herb rich in antioxidants\nHelps calm irritation",
@@ -319,6 +408,10 @@ export const ingredients = [
     name: "BHT",
     image: img("bht"),
     hover: "An antioxidant that protects the oils in a formula from going rancid, helping the product stay fresh, stable and effective for longer.",
+    products: [
+      { handle: 'bye-dull-skin-body-lotion-for-kids-200-ml' },
+      { handle: 'oat-bathing-bar' },
+    ],
     tags: ["Antioxidant", "Formula-Protecting"],
     line: "Butylated Hydroxytoluene",
     what: "An antioxidant that protects the oils in a formula from going rancid",
@@ -346,6 +439,9 @@ export const ingredients = [
     name: "Calcium Gluconate",
     image: img("calcium-gluconate"),
     hover: "A gentle form of calcium that supports the skin’s natural barrier and helps it hold on to moisture, keeping skin resilient, smooth and hydrated.",
+    products: [
+      { handle: 'bubbles-gum-toothpaste-pack-of-2' },
+    ],
     tags: ["Barrier Support", "Hydrating"],
     line: "Calcium D-gluconate",
     what: "A gentle form of calcium\nSupports the skin’s natural barrier",
@@ -364,6 +460,9 @@ export const ingredients = [
     name: "Calendula",
     image: img("calendula"),
     hover: "A gentle flower extract that calms sensitive, irritated skin and helps it recover, leaving it comfortable, soft and balanced.",
+    products: [
+      { handle: 'very-dry-skin-cream-30g-1' },
+    ],
     tags: ["Soothing", "Skin Recovery"],
     line: "Calendula Officinalis Extract",
     what: "A gentle flower extract\nCalms sensitive, irritated skin",
@@ -391,6 +490,11 @@ export const ingredients = [
     name: "MCT Oil",
     image: img("caprylic-capric-triglyceride"),
     hover: "Usually derived from coconut oil, this lightweight emollient softens skin and helps formulas spread evenly without a heavy or greasy feel.",
+    products: [
+      { handle: 'natural-hair-conditioner-for-kids-100-g-3' },
+      { handle: 'bye-dull-skin-body-lotion-for-kids-200-ml' },
+      { handle: 'very-dry-skin-cream-30g-1' },
+    ],
     tags: ["Lightweight Moisture", "Smoothening"],
     line: "Caprylic/Capric Triglyceride",
     what: "Usually derived from coconut oil\nA lightweight emollient that softens skin",
@@ -400,6 +504,9 @@ export const ingredients = [
     name: "Methyl Glucamide",
     image: img("capryloyl-caproyl-methyl-glucamide"),
     hover: "A mild, sugar-derived cleanser that lifts away dirt and oil while staying gentle on skin and hair, helping create a soft lather without leaving skin dry.",
+    products: [
+      { handle: 'bye-oily-skin-face-wash' },
+    ],
     tags: ["Gentle Cleansing", "Non-Drying"],
     line: "Capryloyl/Caproyl Methyl Glucamide",
     what: "A mild, sugar-derived cleanser\nLifts away dirt and oil",
@@ -409,6 +516,9 @@ export const ingredients = [
     name: "Caprylyl Glycol",
     image: img("caprylyl-glycol"),
     hover: "A skin-conditioning ingredient that helps skin hold on to moisture, while also supporting the preservative system to keep the formula fresh for longer.",
+    products: [
+      { handle: 'bye-oily-skin-face-wash' },
+    ],
     tags: ["Hydrating", "Formula-Protecting"],
     line: "Octane-1,2-diol",
     what: "A skin-conditioning ingredient that helps skin hold on to moisture",
@@ -418,6 +528,10 @@ export const ingredients = [
     name: "Capryl Glucoside",
     image: img("caprylyl-capryl-glucoside"),
     hover: "A mild, plant-derived cleanser made from coconut oil and sugar that gently lifts away dirt and oil without stripping skin’s natural moisture.",
+    products: [
+      { handle: 'flake-fighter-anti-dandruff-shampoo-100-ml-2' },
+      { handle: 'bye-dull-skin-face-wash-for-kids-100ml' },
+    ],
     tags: ["Gentle Cleansing"],
     line: "Caprylyl/Capryl Glucoside",
     what: "A mild, plant-derived cleanser made from coconut oil and sugar\nGently lifts away dirt and oil",
@@ -427,6 +541,10 @@ export const ingredients = [
     name: "Carbomer",
     image: img("carbomer"),
     hover: "A thickening agent that gives gels and creams their smooth, light texture and keeps ingredients evenly blended for an easy, non-sticky application.",
+    products: [
+      { handle: 'oat-body-lotion-for-kids' },
+      { handle: 'bye-oily-skin-face-wash' },
+    ],
     tags: ["Texture-Enhancing", "Stabilising"],
     line: "Cross-linked polyacrylic acid",
     what: "A thickening agent that gives gels and creams their smooth, light texture\nKeeps ingredients evenly blended",
@@ -454,6 +572,9 @@ export const ingredients = [
     name: "Himalayan Cedar",
     image: img("himalayan-cedar"),
     hover: "Distilled from Himalayan cedar wood, this aromatic oil helps purify and balance skin and scalp, keeping excess oil and flakes in check while adding a warm, woody scent.",
+    products: [
+      { handle: 'dull-skin-body-wash-for-kids' },
+    ],
     tags: ["Purifying", "Balancing"],
     line: "Cedrus Deodara Oil",
     what: "Distilled from Himalayan cedar wood\nHelps purify and balance skin and scalp",
@@ -463,6 +584,9 @@ export const ingredients = [
     name: "Cellulose Gum",
     image: img("cellulose-gum"),
     hover: "A plant-derived thickener made from cellulose that gives formulas a smooth, consistent texture and helps keep them stable.",
+    products: [
+      { handle: 'bubbles-gum-toothpaste-pack-of-2' },
+    ],
     tags: ["Thickening", "Stabilising"],
     line: "Sodium Carboxymethylcellulose",
     what: "A plant-derived thickener made from cellulose",
@@ -472,6 +596,9 @@ export const ingredients = [
     name: "Beeswax",
     image: img("beeswax"),
     hover: "A natural wax that forms a breathable protective layer on skin and lips, sealing in moisture and giving balms and sticks their smooth, firm texture.",
+    products: [
+      { handle: 'very-dry-skin-cream-30g-1' },
+    ],
     tags: ["Protective", "Nourishing"],
     line: "Cera Alba",
     what: "A natural wax that forms a breathable protective layer on skin and lips\nSeals in moisture",
@@ -481,6 +608,11 @@ export const ingredients = [
     name: "Cetearyl Alcohol",
     image: img("cetearyl-alcohol"),
     hover: "A fatty alcohol that softens skin and gives creams a rich, smooth body. Unlike drying alcohols, it helps lock in moisture.",
+    products: [
+      { handle: 'kumkumadi-facecream-for-kids-50g' },
+      { handle: 'oat-face-cream-50g-2' },
+      { handle: 'very-dry-skin-cream-30g-1' },
+    ],
     tags: ["Softening", "Texture-Enhancing"],
     line: "Hexadecan-1-ol and octadecan-1-ol",
     what: "A fatty alcohol that softens skin\nGives creams a rich, smooth body",
@@ -490,6 +622,9 @@ export const ingredients = [
     name: "Cetearyl Glucoside",
     image: img("cetearyl-glucoside"),
     hover: "A gentle, plant-derived emulsifier made from fatty alcohols and sugar that keeps oil and water blended into a smooth, stable cream that feels light on skin.",
+    products: [
+      { handle: 'oat-face-cream-50g-2' },
+    ],
     tags: ["Gentle Emulsifier", "Stabilising"],
     line: "Hexadecyl and octadecyl glucosides",
     what: "A gentle, plant-derived emulsifier made from fatty alcohols and sugar\nKeeps oil and water blended",
@@ -506,7 +641,18 @@ export const ingredients = [
   },
 ];
 
-// Four highlight boxes at the top of the Certifications tab. Add an `image` and a `link` to any of them if needed.
+// The banner at the top of the Certifications tab (file is hosted by Loopy next to the ingredient photos).
+export const BANNER = PHOTO_BASE + 'no-compromise-banner.webp';
+
+// The certificate categories, in the order they are shown. Give each certificate below a `category` with one of these ids.
+export const certificateCategories = [
+  { id: 'skincare', title: 'Skincare' },
+  { id: 'haircare', title: 'Haircare' },
+  { id: 'makeup', title: 'Makeup' },
+  { id: 'suncare', title: 'Suncare' },
+];
+
+// (No longer shown) the four highlight boxes that used to sit at the top of the Certifications tab. Add an `image` and a `link` to any of them if needed.
 export const badges = [
   { title: 'Cruelty-free', text: 'No animal testing' },
   { title: 'Recycled Packaging', text: '100% recycled plastic' },
@@ -514,10 +660,11 @@ export const badges = [
   { title: 'Product Safety', text: 'Regulatory compliant' },
 ];
 
-// Certificate list. `tags` become the filter chips. `file` opens when a row is clicked.
+// Certificate list. `category` puts it under one of the categories above. `file` opens when a row is clicked.
 export const certificates = [
   {
     title: 'Certificate name',
+    category: 'skincare',
     tags: ['Brand'],
     image: cdn('2_fb67e317-ccd1-4aec-8316-794dc8679cf9.png?v=1793366296'),
     file: cdn('2_fb67e317-ccd1-4aec-8316-794dc8679cf9.png?v=1793366296&width=1600'),
