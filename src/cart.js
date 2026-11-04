@@ -31,6 +31,7 @@ export async function addToCart(variantId) {
     body.sections = drawer.getSectionsToRender().map((s) => s.id).join(',');
     body.sections_url = window.location.pathname;
   }
+  if (drawer && typeof drawer.setActiveElement === 'function') drawer.setActiveElement(document.activeElement);
   const res = await fetch('/cart/add.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/javascript', 'X-Requested-With': 'XMLHttpRequest' },
@@ -38,12 +39,23 @@ export async function addToCart(variantId) {
   });
   const state = await res.json();
   if (!res.ok || state.status) throw new Error(state.description || state.message || 'Could not add to cart');
+  // the theme's own "add to cart" tells the rest of the page about the change before it redraws the drawer
+  try {
+    if (typeof publish === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+      publish(PUB_SUB_EVENTS.cartUpdate, { source: 'ingredient-app', productVariantId: variantId, cartData: state });
+    }
+  } catch (e) { console.error('[ingredient-app] cart event', e); }
   return { state, drawer };
 }
 
 export function showCart(drawer, state) {
   try {
-    if (drawer && typeof drawer.renderContents === 'function' && state.sections) { drawer.renderContents(state); return true; }
+    if (drawer && typeof drawer.renderContents === 'function' && state.sections) {
+      drawer.renderContents(state);
+      // the drawer carries an "is-empty" mark that hides its contents; the theme removes it after every add
+      drawer.classList.remove('is-empty');
+      return true;
+    }
   } catch (e) { console.error('[ingredient-app] cart drawer', e); }
   window.location.href = '/cart';
   return false;
