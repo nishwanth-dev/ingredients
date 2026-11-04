@@ -2,6 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronRight } from './Icons.jsx';
 import { labels, SHOP_URL } from '../content.js';
+import { themeVars } from '../theme.js';
 
 const lines = (t) => (t || '').split(/\r?\n/).map((x) => x.trim()).filter(Boolean);
 const sized = (src, w) => src + (src.includes('?') ? '&' : '?') + 'width=' + w;
@@ -43,7 +44,7 @@ export default function Popup({ item, onClose }) {
 
   return createPortal(
     <div className={'ing-pop' + (isOpen ? ' is-open' : '')} role="dialog" aria-modal="true" aria-hidden={!isOpen}
-      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      style={themeVars} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="ing-box" ref={box}>
         <button type="button" className="ing-x" aria-label="Close" onClick={onClose}>&times;</button>
         {item?.image && <img className="ing-pimg" src={sized(item.image, 800)} alt={item.name} onLoad={fit} />}

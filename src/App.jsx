@@ -15,7 +15,7 @@ const letterOf = (n) => { const l = (n || '#').charAt(0).toUpperCase(); return /
 const idFor = (l) => 'ing-' + (l === '#' ? 'num' : l);
 const OFFSET = 120;
 
-export default function App() {
+export default function App({ standalone = true }) {
   const [tab, setTab] = useState(() => (location.hash === '#certifications' ? 'cert' : 'ing'));
   const [open, setOpen] = useState(null);
   const [on, setOn] = useState(null);
@@ -70,8 +70,8 @@ export default function App() {
 
   return (
     <div className="ing-app" style={themeVars}>
-      <AnnouncementBar />
-      <Header />
+      {standalone && <AnnouncementBar />}
+      {standalone && <Header />}
       <section className="ing">
         <div className="ing-head">
           <p className="ing-sub">{labels.subheading}</p>
@@ -107,8 +107,8 @@ export default function App() {
 
         <div className="ing-view" hidden={tab !== 'cert'}><Certifications /></div>
       </section>
-      <Footer />
-      <BottomNav />
+      {standalone && <Footer />}
+      {standalone && <BottomNav />}
       <Popup item={open} onClose={close} />
     </div>
   );

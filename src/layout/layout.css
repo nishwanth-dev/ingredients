@@ -60,7 +60,3 @@
 
 .hdr-menu .icon-hamburger { display: block; width: 16px; height: 32px; }
 .hdr-menu { margin-left: -3px; }
-
-/* the Shopify theme sets 1rem = 10px; the footer and drawer styles are written for that */
-html { font-size: 62.5%; }
-body { font-size: 1.6rem; line-height: 1.8; }

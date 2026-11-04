@@ -48,3 +48,8 @@ export const theme = {
 
 const kebab = (k) => '--' + k.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase());
 export const themeVars = Object.fromEntries(Object.entries(theme).map(([k, v]) => [kebab(k), v]));
+
+// Lets the Shopify section override colours and sizes (keys are the same as in `theme` above).
+export function setTheme(over) {
+  Object.entries(over || {}).forEach(([k, v]) => { theme[k] = v; themeVars[kebab(k)] = v; });
+}

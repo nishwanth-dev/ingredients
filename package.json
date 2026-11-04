@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:embed": "vite build --mode embed && mv dist-embed/style.css dist-embed/ingredient-app.css",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,0 +1,33 @@
+{%- comment -%}
+  Ingredient dictionary built in React. It loads two files from the theme's Assets: ingredient-app.js and ingredient-app.css
+  (upload both in Edit code > Assets). The header, footer and cart on the page are the theme's own.
+  The script is deferred, so it never blocks the page. While it loads, the box keeps its height to avoid a layout jump.
+{%- endcomment -%}
+<style>
+  #ingredient-app:empty { min-height: 900px; }
+</style>
+<link rel="stylesheet" href="{{ 'ingredient-app.css' | asset_url }}">
+<div id="ingredient-app" data-sticky-offset="{{ section.settings.sticky_offset }}"></div>
+<noscript><p style="padding:40px 20px;text-align:center;">Please turn on JavaScript to see our ingredient dictionary.</p></noscript>
+<script src="{{ 'ingredient-app.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Ingredient App (React)",
+  "settings": [
+    {
+      "type": "range",
+      "id": "sticky_offset",
+      "label": "A-Z bar distance from top (px)",
+      "info": "Set to the height of the sticky header so the bar sits just under it.",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 56
+    }
+  ],
+  "presets": [
+    { "name": "Ingredient App (React)" }
+  ]
+}
+{% endschema %}

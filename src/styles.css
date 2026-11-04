@@ -1,8 +1,3 @@
-*, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; }
-body { background: var(--section-bg); font-family: 'Poppins', sans-serif; }
-.ing-app { min-height: 100vh; }
-
 .ing { background: var(--section-bg); padding: var(--padding-top) 0 var(--padding-bottom); font-family: 'Poppins', sans-serif; color: var(--text); text-transform: lowercase; letter-spacing: -0.03em; }
 .ing * { font-family: 'Poppins', sans-serif; box-sizing: border-box; }
 .ing-head { text-align: center; padding: 0 20px; }

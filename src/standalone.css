@@ -1,0 +1,8 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--section-bg); font-family: 'Poppins', sans-serif; }
+.ing-app { min-height: 100vh; }
+
+/* the Shopify theme sets 1rem = 10px; the footer and drawer styles are written for that */
+html { font-size: 62.5%; }
+body { font-size: 1.6rem; line-height: 1.8; }
