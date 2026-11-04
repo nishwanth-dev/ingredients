@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ChevronRight } from './Icons.jsx';
+import { config } from '../config.js';
+import { fetchProduct, productUrl, cartLink, formatPrice, addToCart, showCart } from '../cart.js';
 import { labels, SHOP_URL, photo } from '../content.js';
 import { themeVars } from '../theme.js';
 
@@ -63,13 +64,7 @@ export default function Popup({ item, onClose }) {
                   <h4>{labels.found}</h4>
                   {products.length > 0 ? (
                     <div className="ing-prods">
-                      {products.map((p) => (
-                        <a className="ing-prod" key={p.url} href={p.url.startsWith('http') ? p.url : SHOP_URL + p.url}>
-                          {p.image ? <img src={sized(p.image, 240)} alt={p.title} onLoad={fit} /> : <span className="ing-prod-ph" />}
-                          <span className="ing-prod-t"><b>{p.title}</b>{p.line && <i>{p.line}</i>}</span>
-                          <ChevronRight />
-                        </a>
-                      ))}
+                      {products.map((p) => <ProductRow key={p.handle || p.url} p={p} fit={fit} onAdded={onClose} />)}
                     </div>
                   ) : <p>{item.found}</p>}
                 </div>
@@ -80,6 +75,68 @@ export default function Popup({ item, onClose }) {
       </div>
     </div>,
     document.body
+  );
+}
+
+function ProductRow({ p, fit, onAdded }) {
+  const handle = p.handle || (p.url || '').split('/products/')[1];
+  const [data, setData] = useState(null);
+  const [failed, setFailed] = useState(false);
+  const [variant, setVariant] = useState(null);
+  const [state, setState] = useState('idle');
+
+  useEffect(() => {
+    let live = true;
+    if (!handle) { setFailed(true); return undefined; }
+    fetchProduct(handle).then((d) => {
+      if (!live) return;
+      setData(d);
+      const first = d.variants.find((v) => v.available) || d.variants[0];
+      setVariant(first ? first.id : null);
+    }).catch(() => { if (live) setFailed(true); });
+    return () => { live = false; };
+  }, [handle]);
+  useEffect(() => { fit(); }, [data, failed, fit]);
+
+  const v = data && data.variants.find((x) => x.id === variant);
+  const title = p.title || (data && data.title) || (handle || '').replace(/-/g, ' ');
+  const image = p.image || (data && data.featured_image ? 'https:' + data.featured_image.replace(/^https?:/, '').replace(/(\.[a-z]+)(\?|$)/i, '_240x$1$2') : '');
+  const line = p.line || (v ? formatPrice(v.price) : '');
+  const many = data && data.variants.length > 1;
+  const soldOut = data && !data.variants.some((x) => x.available);
+  const href = productUrl(handle);
+
+  const add = async (e) => {
+    e.preventDefault();
+    if (!variant || state === 'adding') return;
+    setState('adding');
+    try {
+      const { state: s, drawer } = await addToCart(variant);
+      setState('added');
+      onAdded();
+      showCart(drawer, s);
+    } catch (err) { console.error('[ingredient-app]', err); setState('error'); }
+  };
+
+  return (
+    <div className="ing-prod">
+      <a className="ing-prod-link" href={href}>
+        {image ? <img src={image} alt={title} onLoad={fit} /> : <span className="ing-prod-ph" />}
+        <span className="ing-prod-t"><b>{title}</b>{line && <i>{line}</i>}</span>
+      </a>
+      <div className="ing-prod-buy">
+        {many && (
+          <select className="ing-var" value={variant || ''} onChange={(e) => setVariant(+e.target.value)} aria-label="Choose an option">
+            {data.variants.map((x) => <option key={x.id} value={x.id} disabled={!x.available}>{x.title}{x.available ? '' : ' (sold out)'}</option>)}
+          </select>
+        )}
+        {soldOut ? <span className="ing-add is-off">Sold out</span>
+          : failed || !variant ? <a className="ing-add" href={href}>View</a>
+          : config.ajaxCart
+            ? <button type="button" className="ing-add" onClick={add} disabled={state === 'adding'}>{state === 'adding' ? 'Adding…' : state === 'error' ? 'Try again' : 'Add to cart'}</button>
+            : <a className="ing-add" href={cartLink(variant)}>Add to cart</a>}
+      </div>
+    </div>
   );
 }
 

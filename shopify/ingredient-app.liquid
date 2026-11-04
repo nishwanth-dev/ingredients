@@ -7,7 +7,7 @@
   #ingredient-app:empty { min-height: 900px; }
 </style>
 <link rel="stylesheet" href="{{ 'ingredient-app.css' | asset_url }}">
-<div id="ingredient-app" data-sticky-offset="{{ section.settings.sticky_offset }}"></div>
+<div id="ingredient-app" data-cart="ajax" data-sticky-offset="{{ section.settings.sticky_offset }}"></div>
 <noscript><p style="padding:40px 20px;text-align:center;">Please turn on JavaScript to see our ingredient dictionary.</p></noscript>
 <script src="{{ 'ingredient-app.js' | asset_url }}" defer></script>
 

@@ -126,6 +126,10 @@ export const ingredients = [
     name: "Almond Oil",
     image: img("almond-oil"),
     hover: "Pressed from sweet almonds, this lightweight oil is packed with vitamin E and essential fatty acids that replenish moisture, smooth rough patches and leave it supple and hydrated.",
+    products: [
+      { handle: 'kids-sunscreen-spf-50-50g-pack-of-3' },
+      { handle: '2-in-1-sunscreen-for-kids-spf-50' },
+    ],
     tags: ["Nourishing", "Softening"],
     line: "Prunus Amygdalus Dulcis Oil",
     what: "A lightweight oil pressed from sweet almonds\nReplenishes moisture and smooths rough patches",

@@ -77,13 +77,19 @@
 .ing-bul li { position: relative; padding-left: 22px; font-size: 15px; font-weight: 400; line-height: 1.5; }
 .ing-bul li::before { content: ''; position: absolute; left: 4px; top: 0.55em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 .ing-sec-found { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line-color); }
-.ing-prods { display: flex; flex-direction: column; gap: 12px; }
-.ing-prod { display: flex; align-items: center; gap: 16px; color: inherit; text-decoration: none; }
-.ing-prod > img, .ing-prod-ph { flex: 0 0 auto; width: 108px; height: 84px; border-radius: 16px; background: var(--prod-tile-bg); object-fit: contain; padding: 4px 10px; }
+.ing-prods { display: flex; flex-direction: column; gap: 14px; }
+.ing-prod { display: flex; align-items: center; gap: 12px; }
+.ing-prod-link { flex: 1; min-width: 0; display: flex; align-items: center; gap: 14px; color: inherit; text-decoration: none; }
+.ing-prod-link > img, .ing-prod-ph { flex: 0 0 auto; width: 96px; height: 76px; border-radius: 16px; background: var(--prod-tile-bg); object-fit: contain; padding: 4px 8px; }
 .ing-prod-t { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
-.ing-prod-t b { font-size: 18px; font-weight: 700; line-height: 1.2; color: var(--name-color); }
+.ing-prod-t b { font-size: 16px; font-weight: 700; line-height: 1.2; color: var(--name-color); overflow-wrap: break-word; }
 .ing-prod-t i { font-style: normal; font-size: 14px; font-weight: 400; line-height: 1.35; color: var(--text); }
-.ing-prod svg { flex: 0 0 auto; color: var(--name-color); }
+.ing-prod-buy { flex: 0 0 auto; display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
+.ing-add { display: inline-flex; align-items: center; justify-content: center; padding: 9px 16px; border: 1px solid var(--accent); border-radius: 999px; background: #fff; color: var(--text); font-size: 13px; font-weight: 600; line-height: 1.2; text-decoration: none; text-transform: none; white-space: nowrap; cursor: pointer; transition: background .2s; }
+.ing-add:hover { background: var(--hover-card-bg); }
+.ing-add.is-off, .ing-add:disabled { cursor: default; opacity: .6; }
+.ing-var { max-width: 130px; padding: 6px 8px; border: 1px solid var(--line-color); border-radius: 10px; background: #fff; color: var(--text); font-size: 12px; }
+@media (max-width: 480px) { .ing-prod-link > img, .ing-prod-ph { width: 60px; height: 52px; padding: 3px 5px; border-radius: 12px; } .ing-prod-link { gap: 10px; } .ing-prod-t b { font-size: 14px; } .ing-prod-t i { font-size: 13px; } .ing-add { padding: 8px 12px; font-size: 12px; } .ing-var { max-width: 104px; } }
 .ing-x { position: absolute; top: 14px; right: 14px; z-index: 2; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.25); font-size: 24px; line-height: 1; color: var(--text); cursor: pointer; }
 
 /* certifications */

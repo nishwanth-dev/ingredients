@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import { ingredients, certificates, badges, labels } from './content.js';
 import { setTheme } from './theme.js';
+import { config } from './config.js';
 import './styles.css';
 
 // Mounts the dictionary inside a Shopify page: <div id="ingredient-app" data-sticky-offset="56"></div>.
@@ -24,6 +25,7 @@ function start() {
       if (d.theme) setTheme(d.theme);
     } catch (e) { console.error('[ingredient-app] bad data', e); }
   }
+  config.ajaxCart = mount.dataset.cart === 'ajax';
   if (mount.dataset.stickyOffset) setTheme({ stickyOffset: mount.dataset.stickyOffset + 'px' });
 
   createRoot(mount).render(<App standalone={false} />);
