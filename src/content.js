@@ -35,6 +35,7 @@ export const ingredients = [
   {
     name: "Castor Oil",
     image: img("castor-oil"),
+    hover: "A time-honoured ingredient, castor oil helps our kajal glide on effortlessly while it conditions the delicate lash line and nourishes skin for soft, comfortable wear.",
     tags: ["Smooth Glide", "Conditioning"],
     line: "Ricinus Communis Seed Oil",
     what: "Helps kajal glide on effortlessly\nConditions the delicate lash line",
@@ -43,6 +44,7 @@ export const ingredients = [
   {
     name: "Shea Butter",
     image: img("shea-butter"),
+    hover: "Loaded with fatty acids and vitamins A and E, shea butter melts into skin to provide deep nourishment, sealing in moisture for a soft, smooth and comfortable finish.",
     tags: ["Softening", "Moisturising"],
     line: "Butyrospermum Parkii Butter",
     what: "Melts into skin to provide deep nourishment\nSeals in moisture",
@@ -51,6 +53,7 @@ export const ingredients = [
   {
     name: "Glycerin",
     image: img("glycerin"),
+    hover: "A skin-loving humectant that draws moisture in, keeping lips and skin soft, supple and nourished.",
     tags: ["Hydrating", "Smoothening"],
     line: "Propane-1,2,3-triol",
     what: "A skin-loving humectant that draws moisture in",
@@ -59,6 +62,7 @@ export const ingredients = [
   {
     name: "Beetroot",
     image: img("beetroot"),
+    hover: "Packed with vibrant pigments, beetroot lends a soft, natural flush of colour, while its antioxidants help protect delicate skin for a fresh, healthy-looking glow.",
     tags: ["Natural Tint", "Antioxidant"],
     line: "Beta Vulgaris Root Extract",
     what: "Packed with vibrant pigments that lend a soft, natural flush of colour",
@@ -67,6 +71,7 @@ export const ingredients = [
   {
     name: "Turmeric",
     image: img("turmeric"),
+    hover: "Powered by curcumin, turmeric calms redness and irritation, and defends skin against everyday environmental stressors for clear, healthy skin.",
     tags: ["Anti-inflammatory", "Brightening", "Antioxidant"],
     line: "Curcuma Longa Root Extract",
     what: "Powered by curcumin, calms redness and irritation\nDefends skin against everyday environmental stressors",
@@ -75,6 +80,7 @@ export const ingredients = [
   {
     name: "Saffron",
     image: img("saffron"),
+    hover: "Saffron helps fade dullness and uneven tone while shielding skin from free radical damage, to fight tan and dullness.",
     tags: ["Brightening", "Antioxidant", "Glow-Boosting"],
     line: "Crocus Sativus Flower Extract",
     what: "Helps fade dullness and uneven tone\nShields skin from free radical damage",
@@ -83,6 +89,7 @@ export const ingredients = [
   {
     name: "Hibiscus",
     image: img("hibiscus"),
+    hover: "A cherished Ayurvedic hair ritual, hibiscus boosts softness and shine and help reduce breakage for fuller, healthier-looking hair.",
     tags: ["Strengthening", "Conditioning", "Shine-Boosting"],
     line: "Hibiscus Rosa-Sinensis Flower Extract",
     what: "A cherished Ayurvedic hair ritual\nBoosts softness and shine",
@@ -91,6 +98,7 @@ export const ingredients = [
   {
     name: "Oat",
     image: img("oat"),
+    hover: "Oat relieves itchy, sensitive skin and reinforces the moisture barrier, leaving it calm, comfortable and soft to the touch.",
     tags: ["Soothing", "Barrier Repair"],
     line: "Avena Sativa Kernel Extract",
     what: "Relieves itchy, sensitive skin\nReinforces the moisture barrier",
@@ -99,6 +107,7 @@ export const ingredients = [
   {
     name: "Aloe Vera",
     image: img("aloe-vera"),
+    hover: "A time-honoured skin saviour, aloe provide weightless hydration and cools irritation and redness, helping stressed, sun-exposed skin recover.",
     tags: ["Hydrating", "Soothing", "After-Sun Care"],
     line: "Aloe Barbadensis Leaf Juice",
     what: "Provides weightless hydration\nCools irritation and redness",
@@ -107,6 +116,7 @@ export const ingredients = [
   {
     name: "Rice Water",
     image: img("rice-water"),
+    hover: "A beauty ritual rooted in East Asian tradition, rice water is rich in amino acids, inositol and ferulic acid that soften and soothe skin.",
     tags: ["Brightening", "Smoothening"],
     line: "Oryza Sativa (Rice) Water",
     what: "Rich in amino acids, inositol and ferulic acid\nSoftens and soothes skin",
@@ -115,6 +125,7 @@ export const ingredients = [
   {
     name: "Almond Oil",
     image: img("almond-oil"),
+    hover: "Pressed from sweet almonds, this lightweight oil is packed with vitamin E and essential fatty acids that replenish moisture, smooth rough patches and leave it supple and hydrated.",
     tags: ["Nourishing", "Softening"],
     line: "Prunus Amygdalus Dulcis Oil",
     what: "A lightweight oil pressed from sweet almonds\nReplenishes moisture and smooths rough patches",
@@ -123,6 +134,7 @@ export const ingredients = [
   {
     name: "Mango Butter",
     image: img("mango-butter"),
+    hover: "Rich in fatty acids and vitamins A, C and E, mango butter deeply nourishes, locks in moisture and strengthens the skin barrier, leaving it soft, smooth and supple without a greasy feel.",
     tags: ["Nourishing", "Barrier Support", "Softening"],
     line: "Mangifera Indica Seed Butter",
     what: "Deeply nourishes and locks in moisture\nStrengthens the skin barrier",
@@ -131,6 +143,7 @@ export const ingredients = [
   {
     name: "Ginger",
     image: img("ginger"),
+    hover: "Ginger root invigorates the scalp, helps keep flakes and buildup at bay and protects strands against breakage.",
     tags: ["Scalp Invigorating", "Strengthening", "Clarifying"],
     line: "Zingiber Officinale Root Extract",
     what: "Invigorates the scalp\nHelps keep flakes and buildup at bay",
@@ -139,6 +152,7 @@ export const ingredients = [
   {
     name: "Reetha",
     image: img("reetha"),
+    hover: "Known as nature’s soapnut, reetha is rich in natural saponins that create a soft lather to lift away oil, dirt and buildup without stripping the scalp, leaving hair fresh, light and soft.",
     tags: ["Gentle Cleansing", "Clarifying", "Volumising"],
     line: "Sapindus Mukorossi Fruit Extract",
     what: "Natural saponins create a soft lather\nLifts away oil, dirt and buildup without stripping the scalp",
@@ -147,6 +161,7 @@ export const ingredients = [
   {
     name: "Brahmi",
     image: img("brahmi"),
+    hover: "Brahmi is rich in antioxidants that soothe and nourish the scalp, strengthen hair at the root and help reduce breakage for thicker, healthier-looking lengths.",
     tags: ["Root Strengthening", "Scalp Soothing", "Nourishing"],
     line: "Bacopa Monnieri Extract",
     what: "Soothes and nourishes the scalp\nStrengthens hair at the root",
@@ -155,6 +170,7 @@ export const ingredients = [
   {
     name: "Butylene Glycol",
     image: img("butylene-glycol"),
+    hover: "A lightweight humectant that draws moisture into the skin, butylene glycol keeps it soft and supple while helping active ingredients spread and absorb evenly, giving formulas a silky, weightless feel.",
     tags: ["Hydrating", "Absorption-Boosting"],
     line: "Butane-1,3-diol",
     what: "A lightweight humectant that draws moisture into the skin\nHelps active ingredients spread and absorb evenly",
@@ -163,6 +179,7 @@ export const ingredients = [
   {
     name: "Sugar Maple",
     image: img("sugar-maple"),
+    hover: "A natural source of fruit acids and antioxidants, sugar maple extract gently loosens dull surface cells to refine texture and even skin tone, while helping protect it from everyday environmental stress.",
     tags: ["Gentle Exfoliation", "Brightening", "Smoothening"],
     line: "Acer Saccharum Extract",
     what: "A natural source of fruit acids and antioxidants\nGently loosens dull surface cells to refine texture and even skin tone",
@@ -171,6 +188,7 @@ export const ingredients = [
   {
     name: "Acetamide MEA",
     image: img("acetamide-mea"),
+    hover: "A water-loving humectant that attracts and holds moisture, acetamide MEA keeps skin and hair soft, supple and hydrated, while helping to tame static for smoother, more manageable strands.",
     tags: ["Hydrating", "Conditioning"],
     line: "N-(2-Hydroxyethyl)acetamide",
     what: "A water-loving humectant that attracts and holds moisture\nHelps tame static",
@@ -179,6 +197,7 @@ export const ingredients = [
   {
     name: "Acrylate Copolymer",
     image: img("acrylate-copolymer"),
+    hover: "A flexible film-former that sets into a light, invisible layer, helping formulas lock in place and resist smudging and transfer for long-lasting, fresh-looking wear.",
     tags: ["Long-Wear", "Smudge-Resistant"],
     line: "Acrylates Copolymer",
     what: "A flexible film-former that sets into a light, invisible layer\nHelps formulas lock in place",
@@ -187,6 +206,7 @@ export const ingredients = [
   {
     name: "Acrylates Crosspolymer",
     image: img("acrylates-c10-30-alkyl-acrylate-crosspolymer"),
+    hover: "A gelling agent that gives formulas their smooth, cushiony feel, this crosspolymer keeps oil and water evenly blended and stable so every application spreads easily and absorbs without residue.",
     tags: ["Texture-Enhancing", "Stabilising"],
     line: "Acrylates/C10-30 Alkyl Acrylate Crosspolymer",
     what: "A gelling agent that gives formulas their smooth, cushiony feel\nKeeps oil and water evenly blended and stable",
@@ -195,6 +215,7 @@ export const ingredients = [
   {
     name: "Activated Charcoal",
     image: img("activated-charcoal"),
+    hover: "With a porous structure that works like a magnet, activated charcoal draws out excess oil, dirt and impurities from pores, leaving skin/scalp feeling deeply cleansed, refreshed and visibly clearer.",
     tags: ["Purifying", "Deep Cleansing"],
     line: "Charcoal Powder",
     what: "Has a porous structure that works like a magnet\nDraws out excess oil, dirt and impurities from pores",
@@ -203,6 +224,7 @@ export const ingredients = [
   {
     name: "Agnimantha",
     image: img("agnimantha"),
+    hover: "A traditional Ayurvedic herb rich in antioxidants, agnimantha calms redness and irritation and helps protect skin from everyday stress, leaving it comfortable and balanced.",
     tags: ["Soothing", "Anti-inflammatory", "Antioxidant"],
     line: "Premna Mucronata Extract",
     what: "A traditional Ayurvedic herb rich in antioxidants\nCalms redness and irritation",
@@ -211,6 +233,7 @@ export const ingredients = [
   {
     name: "Allantoin",
     image: img("allantoin"),
+    hover: "Calms and softens skin while supporting its natural renewal, helping rough, dry or irritated skin look smoother and feel more comfortable.",
     tags: ["Soothing", "Skin Renewing"],
     line: "(2,5-Dioxoimidazolidin-4-yl)urea",
     what: "Calms and softens skin\nSupports its natural renewal",
@@ -219,6 +242,7 @@ export const ingredients = [
   {
     name: "Marshmallow Root",
     image: img("marshmallow-root"),
+    hover: "Rich in natural mucilage, marshmallow root forms a light moisturising layer that calms dry, sensitive skin and keeps it soft and hydrated.",
     tags: ["Soothing", "Hydrating"],
     line: "Althaea Officinalis Root Extract",
     what: "Rich in natural mucilage\nForms a light moisturising layer",
@@ -227,6 +251,7 @@ export const ingredients = [
   {
     name: "Anhydroxylitol",
     image: img("anhydroxylitol"),
+    hover: "A plant-derived sugar that helps skin hold on to water and strengthens its moisture barrier, keeping it hydrated for longer.",
     tags: ["Hydrating", "Barrier Support"],
     line: "1,4-Anhydro-D-xylitol",
     what: "A plant-derived sugar\nHelps skin hold on to water\nStrengthens its moisture barrier",
@@ -235,6 +260,7 @@ export const ingredients = [
   {
     name: "Neem",
     image: img("neem"),
+    hover: "A classic Ayurvedic herb, neem helps purify skin, keep blemishes in check and calm redness for a clearer, calmer complexion.",
     tags: ["Purifying", "Clarifying", "Soothing"],
     line: "Azadirachta Indica Leaf Extract",
     what: "A classic Ayurvedic herb\nHelps purify skin and keep blemishes in check",
@@ -243,6 +269,7 @@ export const ingredients = [
   {
     name: "Bael",
     image: img("bael"),
+    hover: "Rich in antioxidants and tannins, bael helps soothe and tone skin, protecting it from everyday stress and leaving it looking fresh and even.",
     tags: ["Soothing", "Antioxidant"],
     line: "Aegle Marmelos Fruit Extract",
     what: "Rich in antioxidants and tannins\nHelps soothe and tone skin",
@@ -251,6 +278,7 @@ export const ingredients = [
   {
     name: "Behenyl Alcohol",
     image: img("behenyl-alcohol"),
+    hover: "A fatty alcohol that gives creams a rich, smooth texture. Unlike drying alcohols, it helps lock in moisture and leaves skin feeling soft.",
     tags: ["Softening", "Texture-Enhancing"],
     line: "Docosan-1-ol",
     what: "A fatty alcohol that gives creams a rich, smooth texture",
@@ -259,6 +287,7 @@ export const ingredients = [
   {
     name: "Bemotrizinol",
     image: img("bis-ethylhexyloxyphenol"),
+    hover: "A modern sunscreen filter that absorbs both UVA and UVB rays. It stays stable in sunlight and helps other filters in the formula last longer, for reliable, long-lasting sun protection.",
     tags: ["Broad-Spectrum UV Protection", "Photostable"],
     line: "Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine",
     what: "A modern sunscreen filter\nAbsorbs both UVA and UVB rays",
@@ -267,6 +296,7 @@ export const ingredients = [
   {
     name: "Brihati",
     image: img("brihati"),
+    hover: "A traditional Ayurvedic herb, brihati is rich in antioxidants that help calm irritation and protect skin from everyday stress.",
     tags: ["Soothing", "Antioxidant"],
     line: "Solanum Indicum Extract",
     what: "A traditional Ayurvedic herb rich in antioxidants\nHelps calm irritation",
@@ -275,6 +305,7 @@ export const ingredients = [
   {
     name: "Butter",
     image: img("butter"),
+    hover: "Rich in natural fats and vitamins A and E, butter deeply nourishes dry skin and lips, sealing in moisture and leaving them soft and smooth.",
     tags: ["Nourishing", "Softening"],
     line: "Butyrum (cow’s milk fat)",
     what: "Rich in natural fats and vitamins A and E\nDeeply nourishes dry skin and lips",
@@ -283,6 +314,7 @@ export const ingredients = [
   {
     name: "BHT",
     image: img("bht"),
+    hover: "An antioxidant that protects the oils in a formula from going rancid, helping the product stay fresh, stable and effective for longer.",
     tags: ["Antioxidant", "Formula-Protecting"],
     line: "Butylated Hydroxytoluene",
     what: "An antioxidant that protects the oils in a formula from going rancid",
@@ -291,6 +323,7 @@ export const ingredients = [
   {
     name: "Styrene Copolymer",
     image: img("butylene-ethylene-styrene-copolymer"),
+    hover: "A gelling agent that thickens oils into a smooth, cushiony texture, helping balms and glosses glide on evenly and stay comfortable on the skin.",
     tags: ["Texture-Enhancing", "Smooth Glide"],
     line: "Butylene/Ethylene/Styrene Copolymer",
     what: "A gelling agent that thickens oils into a smooth, cushiony texture",
@@ -299,6 +332,7 @@ export const ingredients = [
   {
     name: "Alkyl Benzoate",
     image: img("c12-15-alkyl-benzoate"),
+    hover: "A lightweight emollient that softens skin without a greasy feel, helping formulas spread easily and absorb quickly. In sunscreens, it also helps UV filters spread evenly for better coverage.",
     tags: ["Lightweight Feel", "Smoothening"],
     line: "C12-15 Alkyl Benzoate",
     what: "A lightweight emollient that softens skin without a greasy feel\nHelps formulas spread easily and absorb quickly",
@@ -307,6 +341,7 @@ export const ingredients = [
   {
     name: "Calcium Gluconate",
     image: img("calcium-gluconate"),
+    hover: "A gentle form of calcium that supports the skin’s natural barrier and helps it hold on to moisture, keeping skin resilient, smooth and hydrated.",
     tags: ["Barrier Support", "Hydrating"],
     line: "Calcium D-gluconate",
     what: "A gentle form of calcium\nSupports the skin’s natural barrier",
@@ -315,6 +350,7 @@ export const ingredients = [
   {
     name: "Calcium Lactate",
     image: img("calcium-lactate"),
+    hover: "Combining calcium with the moisture-binding properties of lactic acid, calcium lactate helps hydrate and condition skin while supporting a healthy, balanced barrier.",
     tags: ["Hydrating", "Skin Conditioning"],
     line: "Calcium 2-hydroxypropanoate",
     what: "Combines calcium with the moisture-binding properties of lactic acid\nHelps hydrate and condition skin",
@@ -323,6 +359,7 @@ export const ingredients = [
   {
     name: "Calendula",
     image: img("calendula"),
+    hover: "A gentle flower extract that calms sensitive, irritated skin and helps it recover, leaving it comfortable, soft and balanced.",
     tags: ["Soothing", "Skin Recovery"],
     line: "Calendula Officinalis Extract",
     what: "A gentle flower extract\nCalms sensitive, irritated skin",
@@ -331,6 +368,7 @@ export const ingredients = [
   {
     name: "Green Tea",
     image: img("green-tea"),
+    hover: "Packed with antioxidants, green tea helps protect skin from environmental stress, calms redness and helps balance oil.",
     tags: ["Antioxidant", "Soothing", "Refreshing"],
     line: "Camellia Sinensis Leaf Extract",
     what: "Packed with antioxidants that help protect skin from environmental stress\nCalms redness",
@@ -339,6 +377,7 @@ export const ingredients = [
   {
     name: "Camphor",
     image: img("camphor"),
+    hover: "A natural cooling agent that refreshes skin and scalp, camphor helps soothe itchiness and irritation and leaves a clean, tingly feel.",
     tags: ["Cooling", "Soothing"],
     line: "1,7,7-Trimethylbicyclo[2.2.1]heptan-2-one",
     what: "A natural cooling agent that refreshes skin and scalp\nHelps soothe itchiness and irritation",
@@ -347,6 +386,7 @@ export const ingredients = [
   {
     name: "MCT Oil",
     image: img("caprylic-capric-triglyceride"),
+    hover: "Usually derived from coconut oil, this lightweight emollient softens skin and helps formulas spread evenly without a heavy or greasy feel.",
     tags: ["Lightweight Moisture", "Smoothening"],
     line: "Caprylic/Capric Triglyceride",
     what: "Usually derived from coconut oil\nA lightweight emollient that softens skin",
@@ -355,6 +395,7 @@ export const ingredients = [
   {
     name: "Methyl Glucamide",
     image: img("capryloyl-caproyl-methyl-glucamide"),
+    hover: "A mild, sugar-derived cleanser that lifts away dirt and oil while staying gentle on skin and hair, helping create a soft lather without leaving skin dry.",
     tags: ["Gentle Cleansing", "Non-Drying"],
     line: "Capryloyl/Caproyl Methyl Glucamide",
     what: "A mild, sugar-derived cleanser\nLifts away dirt and oil",
@@ -363,6 +404,7 @@ export const ingredients = [
   {
     name: "Caprylyl Glycol",
     image: img("caprylyl-glycol"),
+    hover: "A skin-conditioning ingredient that helps skin hold on to moisture, while also supporting the preservative system to keep the formula fresh for longer.",
     tags: ["Hydrating", "Formula-Protecting"],
     line: "Octane-1,2-diol",
     what: "A skin-conditioning ingredient that helps skin hold on to moisture",
@@ -371,6 +413,7 @@ export const ingredients = [
   {
     name: "Capryl Glucoside",
     image: img("caprylyl-capryl-glucoside"),
+    hover: "A mild, plant-derived cleanser made from coconut oil and sugar that gently lifts away dirt and oil without stripping skin’s natural moisture.",
     tags: ["Gentle Cleansing"],
     line: "Caprylyl/Capryl Glucoside",
     what: "A mild, plant-derived cleanser made from coconut oil and sugar\nGently lifts away dirt and oil",
@@ -379,6 +422,7 @@ export const ingredients = [
   {
     name: "Carbomer",
     image: img("carbomer"),
+    hover: "A thickening agent that gives gels and creams their smooth, light texture and keeps ingredients evenly blended for an easy, non-sticky application.",
     tags: ["Texture-Enhancing", "Stabilising"],
     line: "Cross-linked polyacrylic acid",
     what: "A thickening agent that gives gels and creams their smooth, light texture\nKeeps ingredients evenly blended",
@@ -387,6 +431,7 @@ export const ingredients = [
   {
     name: "Carbon Black",
     image: img("carbon-black"),
+    hover: "A deep black pigment that gives kajal and liners their rich, intense colour in a single swipe.",
     tags: ["Intense Colour"],
     line: "CI 77266",
     what: "A deep black pigment\nGives kajal and liners their rich, intense colour",
@@ -395,6 +440,7 @@ export const ingredients = [
   {
     name: "Papaya",
     image: img("papaya"),
+    hover: "Rich in the natural enzyme papain, papaya gently dissolves dull, dead skin cells to smooth texture and reveal a brighter, fresher complexion.",
     tags: ["Gentle Exfoliation", "Brightening"],
     line: "Carica Papaya Fruit Extract",
     what: "Rich in the natural enzyme papain\nGently dissolves dull, dead skin cells",
@@ -403,6 +449,7 @@ export const ingredients = [
   {
     name: "Himalayan Cedar",
     image: img("himalayan-cedar"),
+    hover: "Distilled from Himalayan cedar wood, this aromatic oil helps purify and balance skin and scalp, keeping excess oil and flakes in check while adding a warm, woody scent.",
     tags: ["Purifying", "Balancing"],
     line: "Cedrus Deodara Oil",
     what: "Distilled from Himalayan cedar wood\nHelps purify and balance skin and scalp",
@@ -411,6 +458,7 @@ export const ingredients = [
   {
     name: "Cellulose Gum",
     image: img("cellulose-gum"),
+    hover: "A plant-derived thickener made from cellulose that gives formulas a smooth, consistent texture and helps keep them stable.",
     tags: ["Thickening", "Stabilising"],
     line: "Sodium Carboxymethylcellulose",
     what: "A plant-derived thickener made from cellulose",
@@ -419,6 +467,7 @@ export const ingredients = [
   {
     name: "Beeswax",
     image: img("beeswax"),
+    hover: "A natural wax that forms a breathable protective layer on skin and lips, sealing in moisture and giving balms and sticks their smooth, firm texture.",
     tags: ["Protective", "Nourishing"],
     line: "Cera Alba",
     what: "A natural wax that forms a breathable protective layer on skin and lips\nSeals in moisture",
@@ -427,6 +476,7 @@ export const ingredients = [
   {
     name: "Cetearyl Alcohol",
     image: img("cetearyl-alcohol"),
+    hover: "A fatty alcohol that softens skin and gives creams a rich, smooth body. Unlike drying alcohols, it helps lock in moisture.",
     tags: ["Softening", "Texture-Enhancing"],
     line: "Hexadecan-1-ol and octadecan-1-ol",
     what: "A fatty alcohol that softens skin\nGives creams a rich, smooth body",
@@ -435,6 +485,7 @@ export const ingredients = [
   {
     name: "Cetearyl Glucoside",
     image: img("cetearyl-glucoside"),
+    hover: "A gentle, plant-derived emulsifier made from fatty alcohols and sugar that keeps oil and water blended into a smooth, stable cream that feels light on skin.",
     tags: ["Gentle Emulsifier", "Stabilising"],
     line: "Hexadecyl and octadecyl glucosides",
     what: "A gentle, plant-derived emulsifier made from fatty alcohols and sugar\nKeeps oil and water blended",
@@ -443,6 +494,7 @@ export const ingredients = [
   {
     name: "Cetearyl Olivate",
     image: img("cetearyl-olivate"),
+    hover: "Derived from olive oil, this gentle emulsifier creates creams with a structure similar to skin’s own lipids, helping hold moisture in and leaving skin soft and smooth.",
     tags: ["Skin-Compatible", "Hydrating"],
     line: "Cetearyl ester of olive oil fatty acids",
     what: "Derived from olive oil\nA gentle emulsifier that creates creams with a structure similar to skin’s own lipids",
