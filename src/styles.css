@@ -141,14 +141,6 @@ a.ing-badge:hover { background: var(--hover-card-bg); }
 .ing-sbox input::placeholder { color: var(--text); opacity: 1; }
 .ing-pline { margin: -6px 0 14px; font-size: 14px; line-height: 1.4; color: var(--text); overflow-wrap: anywhere; }
 
-/* certifications: banner and categories */
+/* certifications: banner (the category buttons reuse .ing-chip below) */
 .ing-banner { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
-.ing-cats { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
-.ing-cat { border: 1px solid var(--badge-border); border-radius: var(--card-radius); background: var(--badge-bg); }
-.ing-cat-head { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px; border: 0; background: none; font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: -0.03em; color: var(--name-color); text-align: left; cursor: pointer; }
-.ing-cat-count { margin-left: 10px; font-size: 14px; font-weight: 500; letter-spacing: 0; color: var(--text); }
-.ing-cat-head svg { flex: 0 0 auto; transition: transform .3s ease; }
-.ing-cat.is-open .ing-cat-head svg { transform: rotate(180deg); }
-.ing-cat-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 0 14px 16px; }
-.ing-cat-empty { margin: 0; padding: 4px 8px 2px; font-size: 14px; color: var(--text); text-transform: none; }
-@media (min-width: 750px) { .ing-cat-body { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ing-repo { margin-top: 28px; }
