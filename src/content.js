@@ -664,10 +664,38 @@ export const badges = [
 // Certificate list. `category` puts it under one of the categories above. `file` opens when a row is clicked.
 export const certificates = [
   {
-    title: 'Certificate name',
-    category: 'skincare',
-    tags: ['Brand'],
-    image: cdn('2_fb67e317-ccd1-4aec-8316-794dc8679cf9.png?v=1793366296'),
-    file: cdn('2_fb67e317-ccd1-4aec-8316-794dc8679cf9.png?v=1793366296&width=1600'),
+    title: 'Face cream + sunscreen SPF 50 · CFT in-vitro SPF & PA report',
+    category: 'suncare',
+    tags: ['SPF'],
+    image: PHOTO_BASE + '1.png',
+    file: PHOTO_BASE + '1.png',
+  },
+  {
+    title: 'Face cream + sunscreen SPF 50 · Clinically tested, dermatologically tested, non-irritant',
+    category: 'suncare',
+    tags: ['SPF'],
+    image: PHOTO_BASE + '2.png',
+    file: PHOTO_BASE + '2.png',
+  },
+  {
+    title: 'Face cream + sunscreen SPF 50 · CFT in-vitro SPF & PA report',
+    category: 'suncare',
+    tags: ['SPF'],
+    image: PHOTO_BASE + '3.png',
+    file: PHOTO_BASE + '3.png',
+  },
+  {
+    title: 'Body lotion + sunscreen SPF 30 · Clinically tested, dermatologically tested, non-irritant',
+    category: 'suncare',
+    tags: ['SPF'],
+    image: PHOTO_BASE + '4.png',
+    file: PHOTO_BASE + '4.png',
+  },
+  {
+    title: 'Body lotion + sunscreen SPF 30 · CFT in-vitro SPF & PA report',
+    category: 'suncare',
+    tags: ['SPF'],
+    image: PHOTO_BASE + '5.png',
+    file: PHOTO_BASE + '5.png',
   },
 ];

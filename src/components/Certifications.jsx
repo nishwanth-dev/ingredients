@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ChevronDown, DownloadIcon } from './Icons.jsx';
 import { assets, certificateCategories, certificates } from '../content.js';
 
-const sized = (src, w) => src + (src.includes('?') ? '&' : '?') + 'width=' + w;
+const sized = (src, w) => !src.includes('cdn.shopify') ? src : src + (src.includes('?') ? '&' : '?') + 'width=' + w;
 
 // The banner on top, a row of category buttons side by side, and the certificates of the chosen category below.
 export default function Certifications() {
